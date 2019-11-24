@@ -1,0 +1,21 @@
+<app-navgeacion></app-navgeacion>
+<h3>Editar Proveedor</h3>
+<form>
+    <div class="form-group">
+        <label for="nombre"> Nombre</label>
+        <input name="nombre" type="text" class="form-control" id="nombre"
+            placeholder="Introduzca el nombre del proveedor" [(ngModel)]="nombre">
+
+        <label for="tipo"> Tipo</label>
+        <input name="tipo" type="text" class="form-control" id="tipo"
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+
+        <label for="funcionalidad"> Funcionalidad</label>
+        <input name="funcionalidad" type="text" class="form-control" id="funcionalidad"
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="funcionalidad">
+            
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

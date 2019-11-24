@@ -1,0 +1,37 @@
+<app-navgeacion></app-navgeacion>
+<h4>Capacidad</h4>
+<button type="button" class="btn btn-success mb-2" (click)="crear()">
+  <i class="fas fa-plus">Crear</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id Capacidad</th>
+      <th scope="col">Id Proveedor</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of capacidad">
+            <th scope="row">{{item.idCapacidad}}</th>
+            <td>{{item.idProyecto}}</td>
+            <td>{{item.estado}}</td>
+            <td>{{item.monto}}</td>
+        <td>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info"
+                (click)="editar(item.idCapacidad)">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button type="button" class="btn btn-danger"
+                (click)="deleteCapacidad(item.idCapacidad)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>

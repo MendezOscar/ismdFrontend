@@ -9,6 +9,18 @@ import { EditarmodeloentregaComponent } from './features/modeloentrega/editarmod
 import { InicioComponent } from './features/inicio/inicio.component';
 import { NavgeacionComponent } from './features/navgeacion/navgeacion.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProveedorComponent } from './features/proveedor/proveedor/proveedor.component';
+import { CrearproveedorComponent } from './features/proveedor/crearproveedor/crearproveedor.component';
+import { EditarproveedorComponent } from './features/proveedor/editarproveedor/editarproveedor.component';
+import { CrearrecursoencabezadoComponent } from './features/recurso-encabezado/crearrecursoencabezado/crearrecursoencabezado.component';
+import { EditarrecursoencabezadoComponent } from './features/recurso-encabezado/editarrecursoencabezado/editarrecursoencabezado.component';
+import { RecursoencabezadoComponent } from './features/recurso-encabezado/recursoencabezado/recursoencabezado.component';
+import { RecursodetalleComponent } from './features/recursodetalle/recursodetalle/recursodetalle.component';
+import { EditarrecursodetalleComponent } from './features/recursodetalle/editarrecursodetalle/editarrecursodetalle.component';
+import { CrearrecursodetalleComponent } from './features/recursodetalle/crearrecursodetalle/crearrecursodetalle.component';
+import { CapacidadComponent } from './features/capacidad/capacidad/capacidad.component';
+import { CrearcapacidadComponent } from './features/capacidad/crearcapacidad/crearcapacidad.component';
+import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/editarcapacidad.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +29,19 @@ import { HttpClientModule } from '@angular/common/http';
     CrearmodeloentregaComponent,
     EditarmodeloentregaComponent,
     InicioComponent,
-    NavgeacionComponent
+    NavgeacionComponent,
+    ProveedorComponent,
+    CrearproveedorComponent,
+    EditarproveedorComponent,
+    CrearrecursoencabezadoComponent,
+    EditarrecursoencabezadoComponent,
+    RecursoencabezadoComponent,
+    RecursodetalleComponent,
+    EditarrecursodetalleComponent,
+    CrearrecursodetalleComponent,
+    CapacidadComponent,
+    CrearcapacidadComponent,
+    EditarcapacidadComponent,
   ],
   imports: [
     BrowserModule,

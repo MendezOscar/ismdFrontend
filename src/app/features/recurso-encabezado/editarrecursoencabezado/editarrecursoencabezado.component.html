@@ -1,0 +1,21 @@
+<app-navgeacion></app-navgeacion>
+<h3>Editar Bono</h3>
+<form>
+    <div class="form-group">
+        <label for="nombre"> Nombre</label>
+        <input name="nombre" type="text" class="form-control" id="nombre"
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+        <label for="descripcion"> Descripcion</label>
+        <input name="descripcion" type="text" class="form-control" id="descripcion"
+                placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
+        <label for="tipo"> Tipo</label>
+        <input name="tipo" type="text" class="form-control" id="tipo"
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+        <label for="costo"> Costo</label>
+        <input name="costo" type="number" class="form-control" id="costo"
+                placeholder="Introduzca el nombre del bono" [(ngModel)]="costo">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

@@ -1,0 +1,33 @@
+<app-navgeacion></app-navgeacion>
+<h4>Recurso Detalle</h4>
+<button type="button" class="btn btn-success mb-2" (click)="crear()">
+  <i class="fas fa-plus">Crear</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id Recurso Detalle</th>
+      <th scope="col">Recurso</th>
+      <th scope="col">Capacidad</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of recursoDetalle">
+            <th scope="row">{{item.idRecursoDet}}</th>
+            <td>{{item.idRecurso}}</td>
+            <td>{{item.capacidad}}</td>
+        <td>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info"
+                (click)="editar(item.idRecursoDet)">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button type="button" class="btn btn-danger"
+                (click)="deleteRecursoDetalle(item.idRecursoDet)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>

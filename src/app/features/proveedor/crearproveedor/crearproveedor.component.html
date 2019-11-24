@@ -1,0 +1,18 @@
+<app-navgeacion></app-navgeacion>
+<h3>Create Proveedor</h3>
+<form>
+    <div class="form-group">
+        <label for="categoryName">Nombre</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del proveedor" [(ngModel)]="nombre">
+        <label for="categoryName"> Tipo</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+        <label for="categoryName"> Funcionalidad</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+            placeholder="Introduzca la funcinalidad" [(ngModel)]="funcinalidad">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

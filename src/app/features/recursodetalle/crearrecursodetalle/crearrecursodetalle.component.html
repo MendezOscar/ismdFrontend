@@ -1,0 +1,16 @@
+<app-navgeacion></app-navgeacion>
+<h3>Create Recurso Detalle</h3>
+<form>
+    <div class="form-group">
+        <label for="categoryName">Id recurso</label>
+        <input name="categoryName" type="number" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del recurso" [(ngModel)]="idrecurso">
+        <label for="categoryName"> Capacidad</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="capacidad">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>
