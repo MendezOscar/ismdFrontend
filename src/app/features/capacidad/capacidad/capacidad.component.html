@@ -1,4 +1,14 @@
-<app-navgeacion></app-navgeacion>
+<div *ngIf="admin">
+  <app-navgeacion></app-navgeacion>
+</div>
+<div *ngIf="dev">
+  <app-navigation-dev></app-navigation-dev>
+</div>
+<div *ngIf="client">
+  <app-navigation-client></app-navigation-client>
+</div>
+
+
 <h4>Capacidad</h4>
 <button type="button" class="btn btn-success mb-2" (click)="crear()">
   <i class="fas fa-plus">Crear</i>

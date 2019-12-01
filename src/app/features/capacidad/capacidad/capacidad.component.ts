@@ -10,10 +10,28 @@ import { Capacidad } from 'src/app/models/Capacidad';
 })
 export class CapacidadComponent implements OnInit {
   capacidad: Capacidad[];
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
+
   constructor(private capacidadService: CapacidadService, private router: Router) { }
 
   ngOnInit() {
     this.getCapacidad();
+    this.getNavBar();
+  }
+
+  getNavBar() {
+    this.userType =  localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
+    }
   }
 
   getCapacidad() {
