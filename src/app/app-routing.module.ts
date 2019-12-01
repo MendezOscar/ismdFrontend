@@ -16,9 +16,11 @@ import { EditarrecursodetalleComponent } from './features/recursodetalle/editarr
 import { CapacidadComponent } from './features/capacidad/capacidad/capacidad.component';
 import { CrearcapacidadComponent } from './features/capacidad/crearcapacidad/crearcapacidad.component';
 import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/editarcapacidad.component';
+import { LoginComponent } from './features/login/login.component';
 
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'modeloentrega', component: ModeloentregaComponent},
   {path: 'crearmodeloentrega', component: CrearmodeloentregaComponent},

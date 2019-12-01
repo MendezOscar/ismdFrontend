@@ -21,6 +21,9 @@ import { CrearrecursodetalleComponent } from './features/recursodetalle/crearrec
 import { CapacidadComponent } from './features/capacidad/capacidad/capacidad.component';
 import { CrearcapacidadComponent } from './features/capacidad/crearcapacidad/crearcapacidad.component';
 import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/editarcapacidad.component';
+import { LoginComponent } from './features/login/login.component';
+import { NavigationDevComponent } from './features/navigation-dev/navigation-dev.component';
+import { NavigationClientComponent } from './features/navigation-client/navigation-client.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/e
     CapacidadComponent,
     CrearcapacidadComponent,
     EditarcapacidadComponent,
+    LoginComponent,
+    NavigationDevComponent,
+    NavigationClientComponent,
   ],
   imports: [
     BrowserModule,

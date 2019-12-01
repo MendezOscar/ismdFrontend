@@ -1,4 +1,13 @@
-<app-navgeacion></app-navgeacion>
+<div *ngIf="admin">
+    <app-navgeacion></app-navgeacion>
+</div>
+<div *ngIf="dev">
+    <app-navigation-dev></app-navigation-dev>
+</div>
+<div *ngIf="client">
+    <app-navigation-client></app-navigation-client>
+</div>
+
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Welcome to ISMD</h1>
