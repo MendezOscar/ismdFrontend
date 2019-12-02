@@ -30,6 +30,9 @@ import { EditarriesgoComponent } from './features/riesgo/editarriesgo/editarries
 import { CambioriesgosComponent } from './features/cambioriesgos/cambioriesgos/cambioriesgos.component';
 import { CrearcambioriesgosComponent } from './features/cambioriesgos/crearcambioriesgos/crearcambioriesgos.component';
 import { EditarcambioriesgosComponent } from './features/cambioriesgos/editarcambioriesgos/editarcambioriesgos.component';
+import { RequerimientoComponent } from './features/requerimiento/requerimiento/requerimiento.component';
+import { CrearrequerimientoComponent } from './features/requerimiento/crearrequerimiento/crearrequerimiento.component';
+import { EditarrequerimientoComponent } from './features/requerimiento/editarrequerimiento/editarrequerimiento.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { EditarcambioriesgosComponent } from './features/cambioriesgos/editarcam
     CambioriesgosComponent,
     CrearcambioriesgosComponent,
     EditarcambioriesgosComponent,
+    RequerimientoComponent,
+    CrearrequerimientoComponent,
+    EditarrequerimientoComponent,
   ],
   imports: [
     BrowserModule,

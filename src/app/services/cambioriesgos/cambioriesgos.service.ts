@@ -8,7 +8,7 @@ import { CambioRiesgo } from 'src/app/models/CambioRiesgos';
 })
 export class CambioriesgosService {
 
-  apiUrl = 'https://localhost:5001/api/CambioRiesgo';
+  apiUrl = 'https://localhost:5001/api/CambioRiesgos';
 
   constructor(private http: HttpClient) { }
 

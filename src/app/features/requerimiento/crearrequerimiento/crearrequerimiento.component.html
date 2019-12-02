@@ -1,0 +1,30 @@
+<app-navgeacion></app-navgeacion>
+<h3>Create Bono</h3>
+<form>
+    <div class="form-group">
+        <label for="categoryName"> Nombre</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+        <label for="categoryName"> Descripcion</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
+        <label for="categoryName"> Fecha</label>
+        <input name="categoryName" type="date" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="fecha">
+        <label for="categoryName"> Prioridad</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
+        <label for="categoryName"> Estado</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="estado">
+        <label for="categoryName"> Programador</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="programador">
+        <label for="categoryName"> Id Proyecto</label>
+        <input name="categoryName" type="number" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="idProyecto">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

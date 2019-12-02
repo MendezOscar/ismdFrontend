@@ -11,7 +11,7 @@ import { CambioRiesgo } from 'src/app/models/CambioRiesgos';
 export class CrearcambioriesgosComponent implements OnInit {
 
   cambioRiesgos: CambioRiesgo;
-  idRiesgo: number;
+  idRiego: string;
 
   constructor(private cambioRiesgosService: CambioriesgosService, private router: Router) { }
 
@@ -20,7 +20,7 @@ export class CrearcambioriesgosComponent implements OnInit {
 
   crear() {
     this.cambioRiesgos = new CambioRiesgo();
-    this.cambioRiesgos.idRiego = this.idRiesgo;
+    this.cambioRiesgos.idRiego = this.idRiego;
 
     this.cambioRiesgosService.createCambioRiesgos(this.cambioRiesgos).subscribe(() => {
       this.router.navigate(['cambioriesgos']);

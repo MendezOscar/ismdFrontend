@@ -11,7 +11,7 @@ import { CambioRiesgo } from 'src/app/models/CambioRiesgos';
 export class EditarcambioriesgosComponent implements OnInit {
 
   cambioRiesgos: CambioRiesgo;
-  IdRiesgo: number;
+  idRiego: string;
 
 
   constructor(private cambioRiesgosService: CambioriesgosService, private router: Router,
@@ -28,12 +28,12 @@ export class EditarcambioriesgosComponent implements OnInit {
   getCambioRiesgosById(id: number) {
     this.cambioRiesgosService.getCambioRiesgosById(id).subscribe(data => {
       this.cambioRiesgos = data;
-      this.IdRiesgo = this.cambioRiesgos.idRiego;
+      this.idRiego = this.cambioRiesgos.idRiego;
     });
   }
 
   editar() {
-    this.cambioRiesgos.idRiego = this.IdRiesgo;
+    this.cambioRiesgos.idRiego = this.idRiego;
 
     this.cambioRiesgosService.editCambioRiesgos(this.cambioRiesgos).subscribe(() => {
       this.router.navigate(['cambioriesgos']);
