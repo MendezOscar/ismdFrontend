@@ -17,6 +17,28 @@ import { CapacidadComponent } from './features/capacidad/capacidad/capacidad.com
 import { CrearcapacidadComponent } from './features/capacidad/crearcapacidad/crearcapacidad.component';
 import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/editarcapacidad.component';
 import { LoginComponent } from './features/login/login.component';
+import { CatalogotecnicoComponent } from './features/catalogotecnico/catalogotecnico/catalogotecnico.component';
+import { CrearcatalogotecnicoComponent } from './features/catalogotecnico/crearcatalogotecnico/crearcatalogotecnico.component';
+import { EditarcatalogotecnicoComponent } from './features/catalogotecnico/editarcatalogotecnico/editarcatalogotecnico.component';
+import { ProyectoComponent } from './features/proyecto/proyecto/proyecto.component';
+import { CrearproyectoComponent } from './features/proyecto/crearproyecto/crearproyecto.component';
+import { EditarproyectoComponent } from './features/proyecto/editarproyecto/editarproyecto.component';
+import { IncidenteComponent } from './features/incidente/incidente/incidente.component';
+import { CrearincidenteComponent } from './features/incidente/crearincidente/crearincidente.component';
+import { EditarincidenteComponent } from './features/incidente/editarincidente/editarincidente.component';
+import { CatalogoclienteComponent } from './features/catalogocliente/catalogocliente/catalogocliente.component';
+import { CrearcatalogoclienteComponent } from './features/catalogocliente/crearcatalogocliente/crearcatalogocliente.component';
+import { EditarcatalogoclienteComponent } from './features/catalogocliente/editarcatalogocliente/editarcatalogocliente.component';
+import { UsuarioComponent } from './features/usuario/usuario/usuario.component';
+import { CrearusuarioComponent } from './features/usuario/crearusuario/crearusuario.component';
+import { EditarusuarioComponent } from './features/usuario/editarusuario/editarusuario.component';
+import { Pruebas } from './models/Pruebas';
+import { PruebasComponent } from './features/pruebas/pruebas/pruebas.component';
+import { CrearpruebasComponent } from './features/pruebas/crearpruebas/crearpruebas.component';
+import { EditarpruebasComponent } from './features/pruebas/editarpruebas/editarpruebas.component';
+import { RecursocambioComponent } from './features/recursocambio/recursocambio/recursocambio.component';
+import { CrearrecursocambioComponent } from './features/recursocambio/crearrecursocambio/crearrecursocambio.component';
+import { EditarrecursocambioComponent } from './features/recursocambio/editarrecursocambio/editarrecursocambio.component';
 
 
 const routes: Routes = [
@@ -36,7 +58,28 @@ const routes: Routes = [
   {path: 'editarrecursodetalle/:id', component: EditarrecursodetalleComponent},
   {path: 'capacidad', component: CapacidadComponent},
   {path: 'crearcapacidad', component: CrearcapacidadComponent},
-  {path: 'editarcapacidad/:id', component: EditarcapacidadComponent}
+  {path: 'editarcapacidad/:id', component: EditarcapacidadComponent},
+  {path: 'catalogotecnico', component: CatalogotecnicoComponent},
+  {path: 'crearcatalogotecnico', component: CrearcatalogotecnicoComponent},
+  {path: 'editarcatalogotecnico/:id', component: EditarcatalogotecnicoComponent},
+  {path: 'proyecto', component: ProyectoComponent},
+  {path: 'crearproyecto', component: CrearproyectoComponent},
+  {path: 'editarproyecto/:id', component: EditarproyectoComponent},
+  {path: 'incidente', component: IncidenteComponent},
+  {path: 'crearincidente', component: CrearincidenteComponent},
+  {path: 'editarincidente/:id', component: EditarincidenteComponent},
+  {path: 'catalogocliente', component: CatalogoclienteComponent},
+  {path: 'crearcatalogocliente', component: CrearcatalogoclienteComponent},
+  {path: 'editarcatalogocliente', component: EditarcatalogoclienteComponent},
+  {path: 'usuario', component: UsuarioComponent},
+  {path: 'crearusuario', component: CrearusuarioComponent},
+  {path: 'editarusuario', component: EditarusuarioComponent},
+  {path: 'pruebas', component: PruebasComponent},
+  {path: 'crearpruebas', component: CrearpruebasComponent},
+  {path: 'editarpruebas/:id', component: EditarpruebasComponent},
+  {path: 'recursocambio', component: RecursocambioComponent},
+  {path: 'crearrecursocambio', component: CrearrecursocambioComponent},
+  {path: 'editarrecursocambio/:id', component: EditarrecursocambioComponent},
 
 ];
 

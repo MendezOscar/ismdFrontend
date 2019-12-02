@@ -1,0 +1,18 @@
+<app-navgeacion></app-navgeacion>
+<h3>Create Usuario</h3>
+<form>
+    <div class="form-group">
+        <label for="categoryName"> Nombre</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+        <label for="categoryName"> Clave</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="clave">
+        <label for="categoryName"> Tipo</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

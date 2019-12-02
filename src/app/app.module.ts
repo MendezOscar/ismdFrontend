@@ -24,6 +24,27 @@ import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/e
 import { LoginComponent } from './features/login/login.component';
 import { NavigationDevComponent } from './features/navigation-dev/navigation-dev.component';
 import { NavigationClientComponent } from './features/navigation-client/navigation-client.component';
+import { EditarcatalogotecnicoComponent } from './features/catalogotecnico/editarcatalogotecnico/editarcatalogotecnico.component';
+import { CrearcatalogotecnicoComponent } from './features/catalogotecnico/crearcatalogotecnico/crearcatalogotecnico.component';
+import { CatalogotecnicoComponent } from './features/catalogotecnico/catalogotecnico/catalogotecnico.component';
+import { ProyectoComponent } from './features/proyecto/proyecto/proyecto.component';
+import { CrearproyectoComponent } from './features/proyecto/crearproyecto/crearproyecto.component';
+import { EditarproyectoComponent } from './features/proyecto/editarproyecto/editarproyecto.component';
+import { UsuarioComponent } from './features/usuario/usuario/usuario.component';
+import { CrearusuarioComponent } from './features/usuario/crearusuario/crearusuario.component';
+import { EditarusuarioComponent } from './features/usuario/editarusuario/editarusuario.component';
+import { IncidenteComponent } from './features/incidente/incidente/incidente.component';
+import { CrearincidenteComponent } from './features/incidente/crearincidente/crearincidente.component';
+import { EditarincidenteComponent } from './features/incidente/editarincidente/editarincidente.component';
+import { CatalogoclienteComponent } from './features/catalogocliente/catalogocliente/catalogocliente.component';
+import { CrearcatalogoclienteComponent } from './features/catalogocliente/crearcatalogocliente/crearcatalogocliente.component';
+import { EditarcatalogoclienteComponent } from './features/catalogocliente/editarcatalogocliente/editarcatalogocliente.component';
+import { PruebasComponent } from './features/pruebas/pruebas/pruebas.component';
+import { CrearpruebasComponent } from './features/pruebas/crearpruebas/crearpruebas.component';
+import { EditarpruebasComponent } from './features/pruebas/editarpruebas/editarpruebas.component';
+import { RecursocambioComponent } from './features/recursocambio/recursocambio/recursocambio.component';
+import { CrearrecursocambioComponent } from './features/recursocambio/crearrecursocambio/crearrecursocambio.component';
+import { EditarrecursocambioComponent } from './features/recursocambio/editarrecursocambio/editarrecursocambio.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +69,27 @@ import { NavigationClientComponent } from './features/navigation-client/navigati
     LoginComponent,
     NavigationDevComponent,
     NavigationClientComponent,
+    EditarcatalogotecnicoComponent,
+    CrearcatalogotecnicoComponent,
+    CatalogotecnicoComponent,
+    ProyectoComponent,
+    CrearproyectoComponent,
+    EditarproyectoComponent,
+    UsuarioComponent,
+    CrearusuarioComponent,
+    EditarusuarioComponent,
+    IncidenteComponent,
+    CrearincidenteComponent,
+    EditarincidenteComponent,
+    CatalogoclienteComponent,
+    CrearcatalogoclienteComponent,
+    EditarcatalogoclienteComponent,
+    PruebasComponent,
+    CrearpruebasComponent,
+    EditarpruebasComponent,
+    RecursocambioComponent,
+    CrearrecursocambioComponent,
+    EditarrecursocambioComponent,
   ],
   imports: [
     BrowserModule,

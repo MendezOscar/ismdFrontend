@@ -1,0 +1,18 @@
+<app-navgeacion></app-navgeacion>
+<h3>Editar Usuario</h3>
+<form>
+    <div class="form-group">
+        <label for="nombre"> Nombre</label>
+        <input name="nombre" type="text" class="form-control" id="nombre"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+        <label for="clave"> Clave</label>
+        <input name="clave" type="text" class="form-control" id="clave"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="clave">
+        <label for="tipo"> Tipo</label>
+        <input name="tipo" type="text" class="form-control" id="tipo"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

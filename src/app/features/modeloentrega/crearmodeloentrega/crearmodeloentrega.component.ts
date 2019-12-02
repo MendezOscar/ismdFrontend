@@ -29,5 +29,5 @@ export class CrearmodeloentregaComponent implements OnInit {
   cancel() {
     this.router.navigate(['modeloentrega']);
   }
-
+ 
 }

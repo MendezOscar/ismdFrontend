@@ -1,0 +1,38 @@
+<app-navgeacion></app-navgeacion>
+<h4>Catalogo Tecnico</h4>
+<button type="button" class="btn btn-success mb-2" (click)="crear()">
+  <i class="fas fa-plus">Crear</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id Catalogo Tecnico</th>
+      <th scope="col">Id Requerimiento</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Detalle</th>
+      <th scope="col">Dependencias</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of catalogoTecnico">
+            <th scope="row">{{item.idCatalogoTec}}</th>
+            <td>{{item.idRequerimiento}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.detalle}}</td>
+            <td>{{item.dependencias}}</td>
+        <td>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info"
+                (click)="editar(item.idCatalogoTec)">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button type="button" class="btn btn-danger"
+                (click)="deleteCatalogoTecnico(item.idCatalogoTec)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>

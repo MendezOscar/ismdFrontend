@@ -1,0 +1,12 @@
+<app-navgeacion></app-navgeacion>
+<h3>Create Recurso Cambio</h3>
+<form>
+    <div class="form-group">
+        <label for="categoryName"> Id Recurso</label>
+        <input name="categoryName" type="number" class="form-control" id="categoryName"
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="recursoId">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>
