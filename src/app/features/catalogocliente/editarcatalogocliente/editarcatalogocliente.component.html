@@ -1,0 +1,21 @@
+<app-navgeacion></app-navgeacion>
+<h3>Editar Catalogo Cliente</h3>
+<form>
+    <div class="form-group">
+        <label for="idCatalogoTecnico"> ID Catalogo Tec</label>
+        <input name="idCatalogoTecnico" type="number" class="form-control" id="idCatalogoTecnico"
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="idCatalogoTecnico">
+        <label for="componente"> Componente</label>
+        <input name="componente" type="text" class="form-control" id="componente"
+                placeholder="Introduzca el nombre del bono" [(ngModel)]="componente">
+        <label for="funcionalidad"> Funcionalidad</label>
+        <input name="funcionalidad" type="text" class="form-control" id="funcionalidad"
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="funcionalidad">
+        <label for="ayuda"> Ayuda</label>
+        <input name="ayuda" type="string" class="form-control" id="ayuda"
+                placeholder="Introduzca el nombre del bono" [(ngModel)]="ayuda">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form> 

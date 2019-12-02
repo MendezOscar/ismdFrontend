@@ -15,14 +15,14 @@ export class EditarmodeloentregaComponent implements OnInit {
 
   constructor(private modeloEntregaService: ModeloentregaService, private router: Router,
               private route: ActivatedRoute) {
-                this.modeloEntrega = new ModeloEntrega();
+                this.modeloEntrega = new ModeloEntrega(); 
               }
 
   ngOnInit() {
     // tslint:disable-next-line: radix
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getModeloEntregaById(id);
-  }
+  } 
 
   getModeloEntregaById(id: number) {
     this.modeloEntregaService.getModeloEntregaById(id).subscribe(data => {

@@ -1,0 +1,15 @@
+<app-navgeacion></app-navgeacion>
+<h3>Editar Pruebas</h3>
+<form>
+    <div class="form-group">
+        <label for="proyecto"> Proyecto</label>
+        <input name="proyecto" type="number" class="form-control" id="proyecto"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="proyecto">
+        <label for="observaciones"> Observaciones</label>
+        <input name="observaciones" type="text" class="form-control" id="observaciones"
+        placeholder="Introduzca el nombre del bono" [(ngModel)]="observaciones">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

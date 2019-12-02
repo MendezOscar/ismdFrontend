@@ -1,28 +1,34 @@
 <app-navgeacion></app-navgeacion>
-<h4>Modelo Entrega</h4>
+<h4>Incidente</h4>
 <button type="button" class="btn btn-success mb-2" (click)="crear()">
   <i class="fas fa-plus">Crear</i>
 </button>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Modelo entrega</th>
+      <th scope="col">Id Incidente</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Prioridad</th>      
+      <th scope="col">Id Proyecto</th>
       <th scope="col">Actions</th>
     </tr>
-  </thead> 
+  </thead>
   <tbody>
-        <tr *ngFor="let item of modeloEntrega">
-            <th scope="row">{{item.idModelo}}</th>
-            <td>{{item.tipo}}</td>
+        <tr *ngFor="let item of incidente">
+            <th scope="row">{{item.idIncidente}}</th>
+            <td>{{item.nombre}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.prioridad}}</td>
+            <td>{{item.idProyecto}}</td>
         <td>
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-info"
-                (click)="editar(item.idModelo)">
+                (click)="editar(item.idIncidente)">
                     <i class="fas fa-pencil-alt"></i>
                 </button>
                 <button type="button" class="btn btn-danger"
-                (click)="deleteModeloEntrega(item.idModelo)">
+                (click)="deleteIncidente(item.idIncidente)">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </div>

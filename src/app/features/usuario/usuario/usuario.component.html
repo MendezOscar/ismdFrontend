@@ -1,28 +1,32 @@
 <app-navgeacion></app-navgeacion>
-<h4>Modelo Entrega</h4>
+<h4>Usuario</h4>
 <button type="button" class="btn btn-success mb-2" (click)="crear()">
   <i class="fas fa-plus">Crear</i>
 </button>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Modelo entrega</th>
+      <th scope="col">Id Usuario</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Clave</th>
+      <th scope="col">Tipo</th>
       <th scope="col">Actions</th>
     </tr>
-  </thead> 
+  </thead>
   <tbody>
-        <tr *ngFor="let item of modeloEntrega">
-            <th scope="row">{{item.idModelo}}</th>
+        <tr *ngFor="let item of usuario">
+            <th scope="row">{{item.idUsuario}}</th>
+            <td>{{item.nombre}}</td>
+            <td>{{item.clave}}</td>
             <td>{{item.tipo}}</td>
         <td>
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-info"
-                (click)="editar(item.idModelo)">
+                (click)="editar(item.idUsuario)">
                     <i class="fas fa-pencil-alt"></i>
                 </button>
                 <button type="button" class="btn btn-danger"
-                (click)="deleteModeloEntrega(item.idModelo)">
+                (click)="deleteUsuario(item.idUsuario)">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </div>
