@@ -16,6 +16,15 @@ import { EditarrecursodetalleComponent } from './features/recursodetalle/editarr
 import { CapacidadComponent } from './features/capacidad/capacidad/capacidad.component';
 import { CrearcapacidadComponent } from './features/capacidad/crearcapacidad/crearcapacidad.component';
 import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/editarcapacidad.component';
+import { CambiosComponent } from './features/cambios/cambios/cambios.component';
+import { CrearcambiosComponent } from './features/cambios/crearcambios/crearcambios.component';
+import { EditarcambiosComponent } from './features/cambios/editarcambios/editarcambios.component';
+import { RiesgoComponent } from './features/riesgo/riesgo/riesgo.component';
+import { CrearriesgoComponent } from './features/riesgo/crearriesgo/crearriesgo.component';
+import { EditarriesgoComponent } from './features/riesgo/editarriesgo/editarriesgo.component';
+import { CambioriesgosComponent } from './features/cambioriesgos/cambioriesgos/cambioriesgos.component';
+import { CrearcambioriesgosComponent } from './features/cambioriesgos/crearcambioriesgos/crearcambioriesgos.component';
+import { EditarcambioriesgosComponent } from './features/cambioriesgos/editarcambioriesgos/editarcambioriesgos.component';
 
 
 const routes: Routes = [
@@ -34,7 +43,16 @@ const routes: Routes = [
   {path: 'editarrecursodetalle/:id', component: EditarrecursodetalleComponent},
   {path: 'capacidad', component: CapacidadComponent},
   {path: 'crearcapacidad', component: CrearcapacidadComponent},
-  {path: 'editarcapacidad/:id', component: EditarcapacidadComponent}
+  {path: 'editarcapacidad/:id', component: EditarcapacidadComponent},
+  {path: 'cambios', component: CambiosComponent},
+  {path: 'crearcambios', component: CrearcambiosComponent},
+  {path: 'editarcambios/:id', component: EditarcambiosComponent},
+  {path: 'riesgo', component: RiesgoComponent},
+  {path: 'crearriesgo', component: CrearriesgoComponent},
+  {path: 'editarriesgo/:id', component: EditarriesgoComponent},
+  {path: 'cambioriesgos', component: CambioriesgosComponent},
+  {path: 'crearcambioriesgos', component: CrearcambioriesgosComponent},
+  {path: 'editarcambioriesgos/:id', component: EditarcambioriesgosComponent},
 
 ];
 

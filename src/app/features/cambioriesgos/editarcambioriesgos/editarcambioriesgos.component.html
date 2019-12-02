@@ -1,0 +1,12 @@
+<app-navgeacion></app-navgeacion>
+<h3>Editar Riesgo</h3>
+<form>
+    <div class="form-group">
+        <label for="idriesgo">Id Riesgo</label>
+        <input name="idriesgo" type="text" class="form-control" id="idriesgo"
+            placeholder="Introduzca el ID del riesgo" [(ngModel)]="idriesgo">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

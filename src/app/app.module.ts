@@ -21,6 +21,15 @@ import { CrearrecursodetalleComponent } from './features/recursodetalle/crearrec
 import { CapacidadComponent } from './features/capacidad/capacidad/capacidad.component';
 import { CrearcapacidadComponent } from './features/capacidad/crearcapacidad/crearcapacidad.component';
 import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/editarcapacidad.component';
+import { CambiosComponent } from './features/cambios/cambios/cambios.component';
+import { CrearcambiosComponent } from './features/cambios/crearcambios/crearcambios.component';
+import { EditarcambiosComponent } from './features/cambios/editarcambios/editarcambios.component';
+import { RiesgoComponent } from './features/riesgo/riesgo/riesgo.component';
+import { CrearriesgoComponent } from './features/riesgo/crearriesgo/crearriesgo.component';
+import { EditarriesgoComponent } from './features/riesgo/editarriesgo/editarriesgo.component';
+import { CambioriesgosComponent } from './features/cambioriesgos/cambioriesgos/cambioriesgos.component';
+import { CrearcambioriesgosComponent } from './features/cambioriesgos/crearcambioriesgos/crearcambioriesgos.component';
+import { EditarcambioriesgosComponent } from './features/cambioriesgos/editarcambioriesgos/editarcambioriesgos.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +51,15 @@ import { EditarcapacidadComponent } from './features/capacidad/editarcapacidad/e
     CapacidadComponent,
     CrearcapacidadComponent,
     EditarcapacidadComponent,
+    CambiosComponent,
+    CrearcambiosComponent,
+    EditarcambiosComponent,
+    RiesgoComponent,
+    CrearriesgoComponent,
+    EditarriesgoComponent,
+    CambioriesgosComponent,
+    CrearcambioriesgosComponent,
+    EditarcambioriesgosComponent,
   ],
   imports: [
     BrowserModule,

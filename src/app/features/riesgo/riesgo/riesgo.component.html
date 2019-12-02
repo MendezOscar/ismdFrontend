@@ -1,0 +1,36 @@
+<app-navgeacion></app-navgeacion>
+<h4>Riesgos</h4>
+<button type="button" class="btn btn-success mb-2" (click)="crear()">
+  <i class="fas fa-plus">Crear</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of riesgo">
+            <th scope="row">{{item.idRiesgo}}</th>
+            <th >{{item.nombre}}</th>
+            <th >{{item.descripcion}}</th>
+            <td>{{item.tipo}}</td>
+        <td>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info"
+                (click)="editar(item.idRiesgo)">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button type="button" class="btn btn-danger"
+                (click)="deleteRiesgo(item.idRiesgo)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>
