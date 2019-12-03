@@ -45,6 +45,18 @@ import { EditarpruebasComponent } from './features/pruebas/editarpruebas/editarp
 import { RecursocambioComponent } from './features/recursocambio/recursocambio/recursocambio.component';
 import { CrearrecursocambioComponent } from './features/recursocambio/crearrecursocambio/crearrecursocambio.component';
 import { EditarrecursocambioComponent } from './features/recursocambio/editarrecursocambio/editarrecursocambio.component';
+import { CambiosComponent } from './features/cambios/cambios/cambios.component';
+import { CrearcambiosComponent } from './features/cambios/crearcambios/crearcambios.component';
+import { EditarcambiosComponent } from './features/cambios/editarcambios/editarcambios.component';
+import { RiesgoComponent } from './features/riesgo/riesgo/riesgo.component';
+import { CrearriesgoComponent } from './features/riesgo/crearriesgo/crearriesgo.component';
+import { EditarriesgoComponent } from './features/riesgo/editarriesgo/editarriesgo.component';
+import { CambioriesgosComponent } from './features/cambioriesgos/cambioriesgos/cambioriesgos.component';
+import { CrearcambioriesgosComponent } from './features/cambioriesgos/crearcambioriesgos/crearcambioriesgos.component';
+import { EditarcambioriesgosComponent } from './features/cambioriesgos/editarcambioriesgos/editarcambioriesgos.component';
+import { RequerimientoComponent } from './features/requerimiento/requerimiento/requerimiento.component';
+import { CrearrequerimientoComponent } from './features/requerimiento/crearrequerimiento/crearrequerimiento.component';
+import { EditarrequerimientoComponent } from './features/requerimiento/editarrequerimiento/editarrequerimiento.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +102,18 @@ import { EditarrecursocambioComponent } from './features/recursocambio/editarrec
     RecursocambioComponent,
     CrearrecursocambioComponent,
     EditarrecursocambioComponent,
+    CambiosComponent,
+    CrearcambiosComponent,
+    EditarcambiosComponent,
+    RiesgoComponent,
+    CrearriesgoComponent,
+    EditarriesgoComponent,
+    CambioriesgosComponent,
+    CrearcambioriesgosComponent,
+    EditarcambioriesgosComponent,
+    RequerimientoComponent,
+    CrearrequerimientoComponent,
+    EditarrequerimientoComponent,
   ],
   imports: [
     BrowserModule,

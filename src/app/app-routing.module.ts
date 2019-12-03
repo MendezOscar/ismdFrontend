@@ -39,6 +39,18 @@ import { EditarpruebasComponent } from './features/pruebas/editarpruebas/editarp
 import { RecursocambioComponent } from './features/recursocambio/recursocambio/recursocambio.component';
 import { CrearrecursocambioComponent } from './features/recursocambio/crearrecursocambio/crearrecursocambio.component';
 import { EditarrecursocambioComponent } from './features/recursocambio/editarrecursocambio/editarrecursocambio.component';
+import { CambiosComponent } from './features/cambios/cambios/cambios.component';
+import { CrearcambiosComponent } from './features/cambios/crearcambios/crearcambios.component';
+import { EditarcambiosComponent } from './features/cambios/editarcambios/editarcambios.component';
+import { RiesgoComponent } from './features/riesgo/riesgo/riesgo.component';
+import { CrearriesgoComponent } from './features/riesgo/crearriesgo/crearriesgo.component';
+import { EditarriesgoComponent } from './features/riesgo/editarriesgo/editarriesgo.component';
+import { CambioriesgosComponent } from './features/cambioriesgos/cambioriesgos/cambioriesgos.component';
+import { CrearcambioriesgosComponent } from './features/cambioriesgos/crearcambioriesgos/crearcambioriesgos.component';
+import { EditarcambioriesgosComponent } from './features/cambioriesgos/editarcambioriesgos/editarcambioriesgos.component';
+import { RequerimientoComponent } from './features/requerimiento/requerimiento/requerimiento.component';
+import { CrearrequerimientoComponent } from './features/requerimiento/crearrequerimiento/crearrequerimiento.component';
+import { EditarrequerimientoComponent } from './features/requerimiento/editarrequerimiento/editarrequerimiento.component';
 
 
 const routes: Routes = [
@@ -81,6 +93,18 @@ const routes: Routes = [
   {path: 'crearrecursocambio', component: CrearrecursocambioComponent},
   {path: 'editarrecursocambio/:id', component: EditarrecursocambioComponent},
 
+  {path: 'cambios', component: CambiosComponent},
+  {path: 'crearcambios', component: CrearcambiosComponent},
+  {path: 'editarcambios/:id', component: EditarcambiosComponent},
+  {path: 'riesgo', component: RiesgoComponent},
+  {path: 'crearriesgo', component: CrearriesgoComponent},
+  {path: 'editarriesgo/:id', component: EditarriesgoComponent},
+  {path: 'cambioriesgos', component: CambioriesgosComponent},
+  {path: 'crearcambioriesgos', component: CrearcambioriesgosComponent},
+  {path: 'editarcambioriesgos/:id', component: EditarcambioriesgosComponent},
+  {path: 'requerimiento', component: RequerimientoComponent},
+  {path: 'crearrequerimiento', component: CrearrequerimientoComponent},
+  {path: 'editarrequerimiento/:id', component: EditarrequerimientoComponent},
 ];
 
 @NgModule({
