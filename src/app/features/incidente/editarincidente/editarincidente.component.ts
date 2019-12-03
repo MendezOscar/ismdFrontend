@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IncidenteService } from 'src/app/services/incidente/incidente.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Incidente } from 'src/app/models/Incidente';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
+import { Proyecto } from 'src/app/models/Proyecto';
 
 @Component({
   selector: 'app-editarincidente',
@@ -13,14 +15,16 @@ export class EditarincidenteComponent implements OnInit {
   nombre: string;
   descripcion: string;
   prioridad: number;
-  idProyecto: number;
+  idProyecto: string;
+  proyectos: Proyecto[];
 
   userType: string;
   admin: boolean;
   dev: boolean;
   client: boolean;
-
+ 
   constructor(private incidenteService: IncidenteService, private router: Router,
+    private proyectoService: ProyectoService,
               private route: ActivatedRoute) {
                 this.incidente = new Incidente();
               }
@@ -30,6 +34,7 @@ export class EditarincidenteComponent implements OnInit {
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getIncidenteById(id);
     this.getNavBar();
+    this.getProyectos();
   }
 
   getNavBar() {
@@ -49,7 +54,12 @@ export class EditarincidenteComponent implements OnInit {
       this.nombre = this.incidente.nombre;
       this.descripcion = this.incidente.descripcion;
       this.prioridad = this.incidente.prioridad;
-      this.idProyecto = this.incidente.idProyecto;
+     // this.idProyecto = this.incidente.idProyecto;
+    });
+  }
+  getProyectos() {
+    this.proyectoService.getProyecto().subscribe(data => {
+      this.proyectos = data;
     });
   }
 
@@ -57,7 +67,8 @@ export class EditarincidenteComponent implements OnInit {
     this.incidente.nombre = this.nombre;
     this.incidente.descripcion = this.descripcion;
     this.incidente.prioridad = this.prioridad;
-    this.incidente.idProyecto = this.idProyecto;
+    // tslint:disable-next-line: radix
+    this.incidente.idProyecto = parseInt(this.idProyecto);
 
     this.incidenteService.editIncidente(this.incidente).subscribe(() => {
       this.router.navigate(['incidente']);

@@ -36,6 +36,14 @@
                         placeholder="Introduzca el nombre del bono" [(ngModel)]="razon">
                 </div>
 
+                <label for="cursoControlSelect">Seleccione el nombre del curso</label>
+                <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idProyecto">
+                    <option *ngFor="let item of proyectos" [value]="item.idProyecto">
+                        {{
+                                    item.nombre
+                                  }}</option>
+                </select>
+
                 <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
                 <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
             </form>

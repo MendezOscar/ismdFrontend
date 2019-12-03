@@ -18,6 +18,14 @@
                                 <label for="categoryName"> Tipo</label>
                                 <input name="categoryName" type="text" class="form-control" id="categoryName"
                                     placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+
+                                    
+                    <label for="cursoControlSelect">Seleccione el nombre del curso</label>
+                    <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idProyecto">
+                        <option *ngFor="let item of proyectos" [value]="item.idProyecto">
+                            {{  item.nombre   }}</option>
+                    </select>
+                    
                             </div>
                             <br />
                             <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>

@@ -37,10 +37,9 @@
                     <label for="categoryName"> Id Proyecto</label>
 
                     <label for="cursoControlSelect">Seleccione el nombre del curso</label>
-                    <select name="nombreCurso" class="form-control" id="cursoControlSelect" [(ngModel)]="idProyecto">
-                        <option *ngFor="let item of proyectos" [value]="item.idProyecto">{{
-                                        item.nombre
-                                      }}</option>
+                    <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idProyecto">
+                        <option *ngFor="let item of proyectos" [value]="item.idProyecto">
+                            {{  item.nombre   }}</option>
                     </select>
                 </div>
 

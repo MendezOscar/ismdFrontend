@@ -2,14 +2,24 @@
 <h3>Editar Pruebas</h3>
 <form>
     <div class="form-group">
-        <label for="proyecto"> Proyecto</label>
+    <!--<label for="proyecto"> Proyecto</label>
         <input name="proyecto" type="number" class="form-control" id="proyecto"
         placeholder="Introduzca el nombre del bono" [(ngModel)]="proyecto">
-        <label for="observaciones"> Observaciones</label>
+        <label for="observaciones"> Observaciones</label>-->    
+        <label for="cursoControlSelect">Seleccione el nombre del curso</label>
+        <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idProyecto">
+            <option *ngFor="let item of proyectos" [value]="item.idProyecto">
+                {{
+                            item.nombre
+                          }}</option>
+        </select>
+
+ <div style="height: 15px;"></div>
+ 
         <input name="observaciones" type="text" class="form-control" id="observaciones"
         placeholder="Introduzca el nombre del bono" [(ngModel)]="observaciones">
     </div>
 
     <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
     <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+</form> 

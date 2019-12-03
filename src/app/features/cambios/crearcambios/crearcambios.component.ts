@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CambiosService } from 'src/app/services/cambios/cambios.service';
 import { Router } from '@angular/router';
 import { Cambios } from 'src/app/models/Cambios';
+import { Proyecto } from 'src/app/models/Proyecto';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
 
 @Component({
   selector: 'app-crearcambios',
@@ -13,6 +15,8 @@ export class CrearcambiosComponent implements OnInit {
   cambios: Cambios;
   solicitante: string;
   razon: string;
+  idProyecto: string;
+  proyectos: Proyecto[];
 
   userType: string;
   admin: boolean;
@@ -20,10 +24,12 @@ export class CrearcambiosComponent implements OnInit {
   client: boolean;
 
 
-  constructor(private cambiosService: CambiosService, private router: Router) { }
+  constructor(private cambiosService: CambiosService, private router: Router,
+    private proyectoService: ProyectoService) { }
 
   ngOnInit() {
     this.getNavBar();
+    this.getProyectos();
   }
 
   getNavBar() {
@@ -37,10 +43,18 @@ export class CrearcambiosComponent implements OnInit {
     }
   }
 
+  getProyectos() {
+    this.proyectoService.getProyecto().subscribe(data => {
+      this.proyectos = data;
+    });
+  }
+
   crear() {
     this.cambios = new Cambios();
     this.cambios.solicitante = this.solicitante;
     this.cambios.razon = this.razon;
+        // tslint:disable-next-line: radix
+        this.cambios.idProyecto = parseInt(this.idProyecto);
 
     this.cambiosService.createCambios(this.cambios).subscribe(() => {
       this.router.navigate(['cambios']);

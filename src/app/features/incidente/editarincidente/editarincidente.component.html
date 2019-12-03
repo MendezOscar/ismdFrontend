@@ -35,9 +35,14 @@
                     <label for="prioridad"> prioridad</label>
                     <input name="prioridad" type="number" class="form-control" id="prioridad"
                         placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
-                    <label for="idProyecto"> Id Proyecto</label>
-                    <input name="idProyecto" type="number" class="form-control" id="idProyecto"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idProyecto">
+                        
+                        <label for="cursoControlSelect">Seleccione el nombre del curso</label>
+                        <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idProyecto">
+                            <option *ngFor="let item of proyectos" [value]="item.idProyecto">
+                                {{
+                                            item.nombre
+                                          }}</option>
+                        </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>

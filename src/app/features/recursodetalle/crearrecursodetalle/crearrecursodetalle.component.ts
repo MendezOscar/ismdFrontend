@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecursodetalleService } from 'src/app/services/recursodetalle/recursodetalle.service';
 import { Router } from '@angular/router';
 import { RecursoDetalle } from 'src/app/models/RecursoDetalle';
-
+ 
 @Component({
   selector: 'app-crearrecursodetalle',
   templateUrl: './crearrecursodetalle.component.html',
