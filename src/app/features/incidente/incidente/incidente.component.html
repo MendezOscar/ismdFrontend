@@ -1,38 +1,63 @@
-<app-navgeacion></app-navgeacion>
-<h4>Incidente</h4>
-<button type="button" class="btn btn-success mb-2" (click)="crear()">
-  <i class="fas fa-plus">Crear</i>
-</button>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id Incidente</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Prioridad</th>      
-      <th scope="col">Id Proyecto</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-        <tr *ngFor="let item of incidente">
+<div *ngIf="admin">
+  <app-navgeacion></app-navgeacion>
+</div>
+<div *ngIf="dev">
+  <app-navigation-dev></app-navigation-dev>
+</div>
+<div *ngIf="client">
+  <app-navigation-client></app-navigation-client>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div *ngIf="admin">
+        <app-dashboard></app-dashboard>
+      </div>
+      <div *ngIf="dev">
+        <app-dashboard-dev></app-dashboard-dev>
+      </div>
+      <div *ngIf="client">
+        <app-dashboard-client></app-dashboard-client>
+      </div>
+    </div>
+    <div class="col-8">
+
+      <h4>Incidente</h4>
+      <button type="button" class="btn btn-success mb-2" (click)="crear()">
+        <i class="fas fa-plus">Crear</i>
+      </button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id Incidente</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Prioridad</th>
+            <th scope="col">Id Proyecto</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of incidente">
             <th scope="row">{{item.idIncidente}}</th>
             <td>{{item.nombre}}</td>
             <td>{{item.descripcion}}</td>
             <td>{{item.prioridad}}</td>
             <td>{{item.idProyecto}}</td>
-        <td>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-info"
-                (click)="editar(item.idIncidente)">
-                    <i class="fas fa-pencil-alt"></i>
+            <td>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info" (click)="editar(item.idIncidente)">
+                  <i class="fas fa-pencil-alt"></i>
                 </button>
-                <button type="button" class="btn btn-danger"
-                (click)="deleteIncidente(item.idIncidente)">
-                    <i class="fas fa-trash-alt"></i>
+                <button type="button" class="btn btn-danger" (click)="deleteIncidente(item.idIncidente)">
+                  <i class="fas fa-trash-alt"></i>
                 </button>
-            </div>
-        </td>
-        </tr>
-    </tbody>
-</table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

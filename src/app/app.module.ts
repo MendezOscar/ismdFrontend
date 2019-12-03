@@ -57,6 +57,9 @@ import { EditarcambioriesgosComponent } from './features/cambioriesgos/editarcam
 import { RequerimientoComponent } from './features/requerimiento/requerimiento/requerimiento.component';
 import { CrearrequerimientoComponent } from './features/requerimiento/crearrequerimiento/crearrequerimiento.component';
 import { EditarrequerimientoComponent } from './features/requerimiento/editarrequerimiento/editarrequerimiento.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { DashboardDevComponent } from './features/dashboard-dev/dashboard-dev.component';
+import { DashboardClientComponent } from './features/dashboard-client/dashboard-client.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +117,9 @@ import { EditarrequerimientoComponent } from './features/requerimiento/editarreq
     RequerimientoComponent,
     CrearrequerimientoComponent,
     EditarrequerimientoComponent,
+    DashboardComponent,
+    DashboardDevComponent,
+    DashboardClientComponent,
   ],
   imports: [
     BrowserModule,

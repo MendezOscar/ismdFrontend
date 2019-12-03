@@ -1,21 +1,48 @@
-<app-navgeacion></app-navgeacion>
-<h3>Editar Incidente</h3>
-<form>
-    <div class="form-group">
-        <label for="nombre"> nombre</label>
-        <input name="nombre" type="text" class="form-control" id="nombre"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
-        <label for="descripcion"> descripcion</label>
-        <input name="descripcion" type="text" class="form-control" id="descripcion"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
-        <label for="prioridad"> prioridad</label>
-        <input name="prioridad" type="number" class="form-control" id="prioridad"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
-        <label for="idProyecto"> Id Proyecto</label>
-        <input name="idProyecto" type="number" class="form-control" id="idProyecto"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="idProyecto">
-    </div>
+<div *ngIf="admin">
+    <app-navgeacion></app-navgeacion>
+</div>
+<div *ngIf="dev">
+    <app-navigation-dev></app-navigation-dev>
+</div>
+<div *ngIf="client">
+    <app-navigation-client></app-navigation-client>
+</div>
 
-    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div *ngIf="admin">
+                <app-dashboard></app-dashboard>
+            </div>
+            <div *ngIf="dev">
+                <app-dashboard-dev></app-dashboard-dev>
+            </div>
+            <div *ngIf="client">
+                <app-dashboard-client></app-dashboard-client>
+            </div>
+        </div>
+        <div class="col-8">
+
+            <h3>Editar Incidente</h3>
+            <form>
+                <div class="form-group">
+                    <label for="nombre"> nombre</label>
+                    <input name="nombre" type="text" class="form-control" id="nombre"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+                    <label for="descripcion"> descripcion</label>
+                    <input name="descripcion" type="text" class="form-control" id="descripcion"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
+                    <label for="prioridad"> prioridad</label>
+                    <input name="prioridad" type="number" class="form-control" id="prioridad"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
+                    <label for="idProyecto"> Id Proyecto</label>
+                    <input name="idProyecto" type="number" class="form-control" id="idProyecto"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idProyecto">
+                </div>
+
+                <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -10,19 +10,36 @@ import { Cambios } from 'src/app/models/Cambios';
 })
 export class EditarcambiosComponent implements OnInit {
 
-  cambios:Cambios
+  cambios: Cambios;
   solicitante: string;
   razon: string;
 
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
   constructor(private CambiosService: CambiosService, private router: Router,
-              private route: ActivatedRoute) {
-                this.cambios = new Cambios();
-              }
+    private route: ActivatedRoute) {
+    this.cambios = new Cambios();
+  }
 
   ngOnInit() {
     // tslint:disable-next-line: radix
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getCambiosById(id);
+    this.getNavBar();
+  }
+
+  getNavBar() {
+    this.userType =  localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
+    }
   }
 
   getCambiosById(id: number) {
@@ -43,7 +60,7 @@ export class EditarcambiosComponent implements OnInit {
     });
   }
 
-  cancel (){
+  cancel() {
     this.router.navigate(['cambios']);
   }
 

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/models/Usuario';
+import { Usaurio } from 'src/app/models/Usaurio';
 @Component({
   selector: 'app-crearusuario',
   templateUrl: './crearusuario.component.html',
   styleUrls: ['./crearusuario.component.css']
 })
 export class CrearusuarioComponent implements OnInit {
-  usuario: Usuario;
+  usuario: Usaurio;
   nombre: string;
   clave: string;
   tipo: number;
@@ -19,8 +19,8 @@ export class CrearusuarioComponent implements OnInit {
   }
 
   crear() {
-    this.usuario = new Usuario();
-    this.usuario.nombre = this.nombre;
+    this.usuario = new Usaurio();
+    this.usuario.username = this.nombre;
     this.usuario.clave = this.clave;
     this.usuario.tipo = this.tipo;
 

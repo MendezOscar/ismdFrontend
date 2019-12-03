@@ -15,37 +15,54 @@ export class EditarcatalogotecnicoComponent implements OnInit {
   detalle: string;
   dependencias: string;
 
-  constructor( private catalogoTecnicoService: CatalogotecnicoService, 
-    private router: Router, private route: ActivatedRoute) { this.catalogoTecnico= new CatalogoTecnico() }
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
+  constructor(private catalogoTecnicoService: CatalogotecnicoService,
+    private router: Router, private route: ActivatedRoute) { this.catalogoTecnico = new CatalogoTecnico() }
 
   ngOnInit() {
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
-    this.getCatalogoTecnicoById(id); 
+    this.getCatalogoTecnicoById(id);
+    this.getNavBar();
   }
 
-    getCatalogoTecnicoById(id: number) {
-      this.catalogoTecnicoService.getCatalogoTecnicoById(id).subscribe(data => {
-        this.catalogoTecnico = data;
-        this.idRequerimiento = this.catalogoTecnico.idRequerimiento;
-        this.nombre = this.catalogoTecnico.nombre;
-        this.detalle= this.catalogoTecnico.detalle;
-        this.dependencias= this.catalogoTecnico.dependencias;
-      });
+  getNavBar() {
+    this.userType = localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
     }
-  
-    editar() {
-      this.catalogoTecnico.idRequerimiento= this.idRequerimiento;
-      this.catalogoTecnico.nombre= this.nombre;
-      this.catalogoTecnico.detalle = this.detalle;
-    this.catalogoTecnico.dependencias= this.dependencias;
-  
-      this.catalogoTecnicoService.editCatalogoTecnico(this.catalogoTecnico).subscribe(() => {
-        this.router.navigate(['catalogotecnico']);
-      });
-    }
-  
-    cancel (){
-      this.router.navigate(['catalogotecnico']);
-    }
-  
   }
+
+  getCatalogoTecnicoById(id: number) {
+    this.catalogoTecnicoService.getCatalogoTecnicoById(id).subscribe(data => {
+      this.catalogoTecnico = data;
+      this.idRequerimiento = this.catalogoTecnico.idRequerimiento;
+      this.nombre = this.catalogoTecnico.nombre;
+      this.detalle = this.catalogoTecnico.detalle;
+      this.dependencias = this.catalogoTecnico.dependencias;
+    });
+  }
+
+  editar() {
+    this.catalogoTecnico.idRequerimiento = this.idRequerimiento;
+    this.catalogoTecnico.nombre = this.nombre;
+    this.catalogoTecnico.detalle = this.detalle;
+    this.catalogoTecnico.dependencias = this.dependencias;
+
+    this.catalogoTecnicoService.editCatalogoTecnico(this.catalogoTecnico).subscribe(() => {
+      this.router.navigate(['catalogotecnico']);
+    });
+  }
+
+  cancel() {
+    this.router.navigate(['catalogotecnico']);
+  }
+
+}

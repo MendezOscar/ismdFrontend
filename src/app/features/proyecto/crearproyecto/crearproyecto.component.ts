@@ -16,9 +16,26 @@ export class CrearproyectoComponent implements OnInit {
   encargado: string;
   documentacion: string;
 
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
   constructor(private proyectoService: ProyectoService, private router: Router) { }
 
   ngOnInit() {
+    this.getNavBar();
+  }
+
+  getNavBar() {
+    this.userType =  localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
+    }
   }
 
   crear() {

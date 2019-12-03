@@ -1,0 +1,11 @@
+.container-inicio {
+    margin: 0 0 1rem;
+    height: 10rem;
+    display: flex;
+    /* align-items por defecto tiene el valor `stretch` */
+    align-items: start;
+  }
+
+.container-fluid{
+  align-items: start;
+}

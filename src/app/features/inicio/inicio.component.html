@@ -8,12 +8,65 @@
     <app-navigation-client></app-navigation-client>
 </div>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Welcome to ISMD</h1>
-        <p class="lead">
-            IBLA BLA BLA BLA BLA BLA
-        </p>
-        <a class="btn btn-primary btn-lg" [routerLink]="['/bitacory']">Iniciar</a>
+
+<div class="container-inicio">
+    <div class="row">
+        <div class="col-3">
+            <div *ngIf="admin">
+                <app-dashboard></app-dashboard>
+            </div>
+            <div *ngIf="dev">
+                <app-dashboard-dev></app-dashboard-dev>
+            </div>
+            <div *ngIf="client">
+                <app-dashboard-client></app-dashboard-client>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="container">
+                <h1>Welcome to ISMD</h1>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-sm">
+                    <h5>Proyectos</h5>
+                    <div class="card my-2" *ngFor="let item of proyectos">
+                        <h5 class="card-header">{{item.nombre}}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.encargado}}</h5>
+                            <p class="card-text">{{item.descripcion}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <h5>Cambios</h5>
+                    <div class="card my-2" *ngFor="let item of cambios">
+                        <h5 class="card-header">{{item.solicitante}}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.idCambio}}</h5>
+                            <p class="card-text">{{item.razon}}
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm">
+                    <h5>Incidentes</h5>
+                    <div class="card my-2" *ngFor="let item of incidentes">
+                        <h5 class="card-header">{{item.nombre}}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.prioridad}}</h5>
+                            <p class="card-text">{{item.descripcion}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

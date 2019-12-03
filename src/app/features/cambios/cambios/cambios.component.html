@@ -1,34 +1,60 @@
-<app-navgeacion></app-navgeacion>
-<h4>Gestión de Cambios</h4>
-<button type="button" class="btn btn-success mb-2" (click)="crear()">
-  <i class="fas fa-plus">Crear</i>
-</button>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Solicitante</th>
-      <th scope="col">Razon</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-        <tr *ngFor="let item of cambios">
-            <th scope="row">{{item.idCambio}}</th>
-            <td>{{item.solicitante}}</td>
-            <td>{{item.razon}}</td>
-        <td>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-info"
-                (click)="editar(item.idCambio)">
-                    <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button type="button" class="btn btn-danger"
-                (click)="deleteCambios(item.idCambio)">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
+<div *ngIf="admin">
+    <app-navgeacion></app-navgeacion>
+</div>
+<div *ngIf="dev">
+    <app-navigation-dev></app-navigation-dev>
+</div>
+<div *ngIf="client">
+    <app-navigation-client></app-navigation-client>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div *ngIf="admin">
+                <app-dashboard></app-dashboard>
             </div>
-        </td>
-        </tr>
-    </tbody>
-</table>
+            <div *ngIf="dev">
+                <app-dashboard-dev></app-dashboard-dev>
+            </div>
+            <div *ngIf="client">
+                <app-dashboard-client></app-dashboard-client>
+            </div>
+        </div>
+        <div class="col-8">
+
+            <h4>Gestión de Cambios</h4>
+            <button type="button" class="btn btn-success mb-2" (click)="crear()">
+                <i class="fas fa-plus">Crear</i>
+            </button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Solicitante</th>
+                        <th scope="col">Razon</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of cambios">
+                        <th scope="row">{{item.idCambio}}</th>
+                        <td>{{item.solicitante}}</td>
+                        <td>{{item.razon}}</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-info" (click)="editar(item.idCambio)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger" (click)="deleteCambios(item.idCambio)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

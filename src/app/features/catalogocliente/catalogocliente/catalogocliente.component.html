@@ -1,38 +1,63 @@
-<app-navgeacion></app-navgeacion>
-<h4>Catalogo Cliente</h4>
-<button type="button" class="btn btn-success mb-2" (click)="crear()">
-  <i class="fas fa-plus">Crear</i>
-</button>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id Catalogo Cliente</th>
-      <th scope="col">Id Catalogo Tecnico</th>
-      <th scope="col">Componente</th>
-      <th scope="col">Funcionalidad</th>
-      <th scope="col">Ayuda</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-        <tr *ngFor="let item of catalogoCliente">
+<div *ngIf="admin">
+  <app-navgeacion></app-navgeacion>
+</div>
+<div *ngIf="dev">
+  <app-navigation-dev></app-navigation-dev>
+</div>
+<div *ngIf="client">
+  <app-navigation-client></app-navigation-client>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div *ngIf="admin">
+        <app-dashboard></app-dashboard>
+      </div>
+      <div *ngIf="dev">
+        <app-dashboard-dev></app-dashboard-dev>
+      </div>
+      <div *ngIf="client">
+        <app-dashboard-client></app-dashboard-client>
+      </div>
+    </div>
+    <div class="col-8">
+
+      <h4>Catalogo Cliente</h4>
+      <button type="button" class="btn btn-success mb-2" (click)="crear()">
+        <i class="fas fa-plus">Crear</i>
+      </button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id Catalogo Cliente</th>
+            <th scope="col">Id Catalogo Tecnico</th>
+            <th scope="col">Componente</th>
+            <th scope="col">Funcionalidad</th>
+            <th scope="col">Ayuda</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of catalogoCliente">
             <th scope="row">{{item.idCatalogoCliente}}</th>
             <td>{{item.idCatalogoTec}}</td>
             <td>{{item.componente}}</td>
             <td>{{item.funcionalidad}}</td>
             <td>{{item.ayuda}}</td>
-        <td>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-info"
-                (click)="editar(item.idCatalogoCliente)">
-                    <i class="fas fa-pencil-alt"></i>
+            <td>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info" (click)="editar(item.idCatalogoCliente)">
+                  <i class="fas fa-pencil-alt"></i>
                 </button>
-                <button type="button" class="btn btn-danger"
-                (click)="deleteCatalogoCliente(item.idCatalogoCliente)">
-                    <i class="fas fa-trash-alt"></i>
+                <button type="button" class="btn btn-danger" (click)="deleteCatalogoCliente(item.idCatalogoCliente)">
+                  <i class="fas fa-trash-alt"></i>
                 </button>
-            </div>
-        </td>
-        </tr>
-    </tbody>
-</table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

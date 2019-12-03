@@ -1,21 +1,52 @@
-<app-navgeacion></app-navgeacion>
-<h3>Create Incidente</h3>
-<form>
-    <div class="form-group">
-        <label for="categoryName"> Nombre</label>
-        <input name="categoryName" type="text" class="form-control" id="categoryName"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
-        <label for="categoryName"> Descripcion</label>
-        <input name="categoryName" type="text" class="form-control" id="categoryName"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
-        <label for="categoryName"> Prioridad</label>
-        <input name="categoryName" type="number" class="form-control" id="categoryName"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
-        <label for="categoryName"> Id Proyecto</label>
-        <input name="categoryName" type="number" class="form-control" id="categoryName"
-        placeholder="Introduzca el nombre del bono" [(ngModel)]="idProyecto">
-    </div>
+<div *ngIf="admin">
+    <app-navgeacion></app-navgeacion>
+</div>
+<div *ngIf="dev">
+    <app-navigation-dev></app-navigation-dev>
+</div>
+<div *ngIf="client">
+    <app-navigation-client></app-navigation-client>
+</div>
 
-    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div *ngIf="admin">
+                <app-dashboard></app-dashboard>
+            </div>
+            <div *ngIf="dev">
+                <app-dashboard-dev></app-dashboard-dev>
+            </div>
+            <div *ngIf="client">
+                <app-dashboard-client></app-dashboard-client>
+            </div>
+        </div>
+        <div class="col-8">
+            <h3>Create Incidente</h3>
+            <form>
+                <div class="form-group">
+                    <label for="categoryName"> Nombre</label>
+                    <input name="categoryName" type="text" class="form-control" id="categoryName"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+                    <label for="categoryName"> Descripcion</label>
+                    <input name="categoryName" type="text" class="form-control" id="categoryName"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
+                    <label for="categoryName"> Prioridad</label>
+                    <input name="categoryName" type="number" class="form-control" id="categoryName"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
+                    <label for="categoryName"> Id Proyecto</label>
+
+                    <label for="cursoControlSelect">Seleccione el nombre del curso</label>
+                    <select name="nombreCurso" class="form-control" id="cursoControlSelect" [(ngModel)]="idProyecto">
+                        <option *ngFor="let item of proyectos" [value]="item.idProyecto">{{
+                                        item.nombre
+                                      }}</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -14,38 +14,55 @@ export class EditarcatalogoclienteComponent implements OnInit {
   funcinalidad: string;
   ayuda: string;
 
-    constructor( private catalogoClienteService: CatalogoclienteService, 
-      private router: Router, private route: ActivatedRoute) { this.catalogoCliente= new CatalogoCliente() }
-  
-    ngOnInit() {
-          // tslint:disable-next-line: radix
-      const id = parseInt(this.route.snapshot.paramMap.get('id'));
-      this.getCatalogoClienteById(id); 
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
+  constructor(private catalogoClienteService: CatalogoclienteService,
+    private router: Router, private route: ActivatedRoute) { this.catalogoCliente = new CatalogoCliente() }
+
+  ngOnInit() {
+    // tslint:disable-next-line: radix
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.getCatalogoClienteById(id);
+    this.getNavBar();
+  }
+
+  getNavBar() {
+    this.userType = localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
     }
-  
-      getCatalogoClienteById(id: number) {
-        this.catalogoClienteService.getCatalogoClienteById(id).subscribe(data => {
-          this.catalogoCliente = data;
-          this.idCatalogoTecnico = this.catalogoCliente.idCatalogoTec;
-          this.componente = this.catalogoCliente.componente;
-          this.funcinalidad= this.catalogoCliente.funcionalidad;
-          this.ayuda= this.catalogoCliente.ayuda;
-        });
-      }
-    
-      editar() {
-        this.catalogoCliente.idCatalogoTec= this.idCatalogoTecnico;
-        this.catalogoCliente.componente= this.componente;
-        this.catalogoCliente.funcionalidad = this.funcinalidad;
-      this.catalogoCliente.ayuda= this.ayuda;
-    
-        this.catalogoClienteService.editCatalogoCliente(this.catalogoCliente).subscribe(() => {
-          this.router.navigate(['catalogocliente']);
-        });
-      }
-    
-      cancel (){
-        this.router.navigate(['catalogocliente']);
-      }
-    
-    }
+  }
+
+  getCatalogoClienteById(id: number) {
+    this.catalogoClienteService.getCatalogoClienteById(id).subscribe(data => {
+      this.catalogoCliente = data;
+      this.idCatalogoTecnico = this.catalogoCliente.idCatalogoTec;
+      this.componente = this.catalogoCliente.componente;
+      this.funcinalidad = this.catalogoCliente.funcionalidad;
+      this.ayuda = this.catalogoCliente.ayuda;
+    });
+  }
+
+  editar() {
+    this.catalogoCliente.idCatalogoTec = this.idCatalogoTecnico;
+    this.catalogoCliente.componente = this.componente;
+    this.catalogoCliente.funcionalidad = this.funcinalidad;
+    this.catalogoCliente.ayuda = this.ayuda;
+
+    this.catalogoClienteService.editCatalogoCliente(this.catalogoCliente).subscribe(() => {
+      this.router.navigate(['catalogocliente']);
+    });
+  }
+
+  cancel() {
+    this.router.navigate(['catalogocliente']);
+  }
+
+}

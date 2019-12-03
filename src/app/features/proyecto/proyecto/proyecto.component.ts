@@ -11,11 +11,28 @@ import { Proyecto} from 'src/app/models/Proyecto'
 export class ProyectoComponent implements OnInit {
   proyecto: Proyecto[];
 
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
 
   constructor(private proyectoService: ProyectoService, private router: Router) { }
 
   ngOnInit() {
     this.getProyecto();
+    this.getNavBar();
+  }
+
+  getNavBar() {
+    this.userType =  localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
+    }
   }
 
   getProyecto() {

@@ -15,6 +15,11 @@ export class EditarproyectoComponent implements OnInit {
   encargado: string;
   documentacion: string;
 
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
   constructor(private proyectoService: ProyectoService, private router: Router,
               private route: ActivatedRoute) {
                 this.proyecto = new Proyecto();
@@ -24,6 +29,18 @@ export class EditarproyectoComponent implements OnInit {
     // tslint:disable-next-line: radix
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getProyectoServiceById(id);
+    this.getNavBar();
+  }
+
+  getNavBar() {
+    this.userType =  localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
+    }
   }
 
   getProyectoServiceById(id: number) {

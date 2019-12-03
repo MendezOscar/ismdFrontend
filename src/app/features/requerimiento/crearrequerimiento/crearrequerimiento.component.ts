@@ -17,10 +17,28 @@ export class CrearrequerimientoComponent implements OnInit {
   programador: string;
   idProyecto: number;
 
+  userType: string;
+  admin: boolean;
+  dev: boolean;
+  client: boolean;
+
   constructor(private requerimientoService: RequerimientoService, private router: Router) { }
 
   ngOnInit() {
+    this.getNavBar();
   }
+
+  getNavBar() {
+    this.userType = localStorage.getItem('user');
+    if (this.userType === '1') {
+      this.admin = true;
+    } else if (this.userType === '2') {
+      this.dev = true;
+    } else if (this.userType === '3') {
+      this.client = true;
+    }
+  }
+
 
   crear() {
     this.requerimiento = new Requerimiento();
