@@ -33,6 +33,7 @@
                         <th scope="col">Id</th>
                         <th scope="col">Solicitante</th>
                         <th scope="col">Razon</th>
+                        <th scope="col">Proyecto</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@
                         <th scope="row">{{item.idCambio}}</th>
                         <td>{{item.solicitante}}</td>
                         <td>{{item.razon}}</td>
+                        <td>{{item.idProyecto}}</td>
                         <td>
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-info" (click)="editar(item.idCambio)">
