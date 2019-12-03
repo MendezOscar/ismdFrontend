@@ -23,21 +23,21 @@
         </div>
         <div class="col-8">
 
-            <h3>Editar Bono</h3>
+            <h3>Editar Gestión de Cambio</h3>
             <form>
                 <div class="form-group">
                     <label for="solicitante">Solicitante</label>
                     <input name="solicitante" type="text" class="form-control" id="solicitante"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="solicitante">
+                        placeholder="Introduzca el nombre del solicitante" [(ngModel)]="solicitante">
                 </div>
                 <div class="form-group">
                     <label for="razon">Razón</label>
                     <input name="razon" type="text" class="form-control" id="razon"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="razon">
+                        placeholder="Introduzca la razon del cambio" [(ngModel)]="razon">
                 </div>
 
-                <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
             </form>
         </div>
     </div>

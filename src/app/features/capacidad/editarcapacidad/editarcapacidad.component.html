@@ -8,24 +8,37 @@
     <app-navigation-client></app-navigation-client>
 </div>
 
+<app-navgeacion></app-navgeacion>
 
-<h3>Editar Capacidad</h3>
-<form>
-    <div class="form-group">
-        <label for="nombre"> Id proyecto</label>
-        <input name="nombre" type="text" class="form-control" id="nombre"
-            placeholder="Introduzca el nombre del proveedor" [(ngModel)]="idProyecto">
+<div class="container-fluid">
 
-        <label for="tipo"> Estado</label>
-        <input name="tipo" type="text" class="form-control" id="tipo"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="estado">
+  <div class="row">
 
-        <label for="funcionalidad"> Monto</label>
-        <input name="funcionalidad" type="text" class="form-control" id="funcionalidad"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="monto">
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+            <h3>Modificar Gestión de la Capacidad</h3>
+            <form>
+                <div class="form-group">
+                    <label for="nombre"> Id Proyecto</label>
+                    <input name="nombre" type="text" class="form-control" id="nombre"
+                        placeholder="Introduzca el ID del proyecto" [(ngModel)]="idProyecto">
             
-    </div>
+                    <label for="tipo"> Estado</label>
+                    <input name="tipo" type="text" class="form-control" id="tipo"
+                        placeholder="Introduzca el estado" [(ngModel)]="estado">
+            
+                    <label for="funcionalidad"> Monto</label>
+                    <input name="funcionalidad" type="text" class="form-control" id="funcionalidad"
+                        placeholder="Introduzca el monto" [(ngModel)]="monto">
+                        
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
+            </form>
+	</div>
 
-    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+   </div>
+</div>

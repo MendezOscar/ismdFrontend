@@ -8,40 +8,53 @@
   <app-navigation-client></app-navigation-client>
 </div>
 
+<app-navgeacion></app-navgeacion>
 
-<h4>Capacidad</h4>
-<button type="button" class="btn btn-success mb-2" (click)="crear()">
-  <i class="fas fa-plus">Crear</i>
-</button>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id Capacidad</th>
-      <th scope="col">Id Proveedor</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Monto</th>
-      <th scope="col">Actions</th>
+<div class="container-fluid">
 
-    </tr>
-  </thead>
-  <tbody>
-        <tr *ngFor="let item of capacidad">
-            <th scope="row">{{item.idCapacidad}}</th>
-            <td>{{item.idProyecto}}</td>
-            <td>{{item.estado}}</td>
-            <td>{{item.monto}}</td>
-        <td>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-info"
-                (click)="editar(item.idCapacidad)">
-                    <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button type="button" class="btn btn-danger"
-                (click)="deleteCapacidad(item.idCapacidad)">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </div>
-        </td>
-        </tr>
-    </tbody>
-</table>
+  <div class="row">
+
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+      <h4>Gestión de la Capacidad</h4>
+      <button type="button" class="btn btn-success mb-2" (click)="crear()">
+        <i class="fas fa-plus">Crear</i>
+      </button>
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Id</th>
+            <th >Id Proyecto</th>
+            <th >Estado</th>
+            <th >Monto</th>
+            <th scope="col">Acciones</th>
+      
+          </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let item of capacidad">
+                  <th scope="row">{{item.idCapacidad}}</th>
+                  <td>{{item.idProyecto}}</td>
+                  <td>{{item.estado}}</td>
+                  <td>{{item.monto}}</td>
+              <td>
+                  <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-info"
+                      (click)="editar(item.idCapacidad)">
+                          <i class="fas fa-pencil-alt"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger"
+                      (click)="deleteCapacidad(item.idCapacidad)">
+                          <i class="fas fa-trash-alt"></i>
+                      </button>
+                  </div>
+              </td>
+              </tr>
+          </tbody>
+      </table>
+	</div>
+
+   </div>
+</div>

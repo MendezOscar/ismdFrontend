@@ -1,15 +1,28 @@
 <app-navgeacion></app-navgeacion>
-<h3>Create Pruebas</h3>
-<form>
-    <div class="form-group">
-        <label for="categoryName"> Proyecto</label>
-        <input name="categoryName" type="number" class="form-control" id="categoryName"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="proyecto">
-        <label for="categoryName"> Observaciones</label>
-        <input name="categoryName" type="text" class="form-control" id="categoryName"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="observaciones">
-    </div>
 
-    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+
+  <div class="row">
+
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+            <h3>Crear Prueba</h3>
+            <form>
+                <div class="form-group">
+                    <label for="categoryName">Proyecto</label>
+                    <input name="categoryName" type="number" class="form-control" id="categoryName"
+                        placeholder="Introduzca el nombre del proyecto" [(ngModel)]="proyecto">
+                    <label for="categoryName"> Observaciones</label>
+                    <input name="categoryName" type="text" class="form-control" id="categoryName"
+                        placeholder="Introduzca las observaciones del proyecto" [(ngModel)]="observaciones">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="crear()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
+            </form>
+	</div>
+
+   </div>
+</div>

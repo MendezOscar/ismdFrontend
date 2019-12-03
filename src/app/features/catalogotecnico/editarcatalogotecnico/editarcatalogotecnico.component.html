@@ -23,25 +23,25 @@
         </div>
         <div class="col-8">
 
-            <h3>Editar Catalogo Tecnico</h3>
+            <h3>Modificar Catalogo Tecnico</h3>
             <form>
                 <div class="form-group">
                     <label for="idRequerimiento"> ID Requerimiento</label>
                     <input name="idRequerimiento" type="number" class="form-control" id="idRequerimiento"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idRequerimiento">
+                        placeholder="Introduzca el ID del requerimiento" [(ngModel)]="idRequerimiento">
                     <label for="nombre"> Nombre</label>
                     <input name="nombre" type="text" class="form-control" id="nombre"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+                        placeholder="Introduzca el nombre" [(ngModel)]="nombre">
                     <label for="detalle"> Detalle</label>
                     <input name="detalle" type="text" class="form-control" id="detalle"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="detalle">
+                        placeholder="Introduzca el detalle" [(ngModel)]="detalle">
                     <label for="dependencias"> Dependencias</label>
                     <input name="dependencias" type="string" class="form-control" id="dependencias"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="dependencias">
+                        placeholder="Introduzca las dependencias" [(ngModel)]="dependencias">
                 </div>
 
-                <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
             </form>
         </div>
     </div>

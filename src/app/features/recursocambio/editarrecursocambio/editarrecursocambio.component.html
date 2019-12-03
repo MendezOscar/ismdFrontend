@@ -1,12 +1,25 @@
 <app-navgeacion></app-navgeacion>
-<h3>Editar Recurso Cambio</h3>
-<form>
-    <div class="form-group">
-        <label for="recursoId"> Recurso Id</label>
-        <input name="recursoId" type="number" class="form-control" id="recursoId"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="recursoId">
-    </div>
 
-    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+
+  <div class="row">
+
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+            <h3>Modificar cambio de recurso</h3>
+            <form>
+                <div class="form-group">
+                    <label for="recursoId">Id Recurso</label>
+                    <input name="recursoId" type="number" class="form-control" id="recursoId"
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="recursoId">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
+            </form>
+	</div>
+
+   </div>
+</div>

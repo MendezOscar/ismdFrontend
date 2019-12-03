@@ -23,25 +23,25 @@
         </div>
         <div class="col-8">
 
-            <h3>Editar Incidente</h3>
+            <h3>Modificar Incidente</h3>
             <form>
                 <div class="form-group">
-                    <label for="nombre"> nombre</label>
+                    <label for="nombre"> Nombre</label>
                     <input name="nombre" type="text" class="form-control" id="nombre"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
-                    <label for="descripcion"> descripcion</label>
+                        placeholder="Introduzca el nombre del incidente" [(ngModel)]="nombre">
+                    <label for="descripcion"> Descripcion</label>
                     <input name="descripcion" type="text" class="form-control" id="descripcion"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
-                    <label for="prioridad"> prioridad</label>
+                        placeholder="Introduzca la descripción del incidente" [(ngModel)]="descripcion">
+                    <label for="prioridad">Prioridad (1-5)</label>
                     <input name="prioridad" type="number" class="form-control" id="prioridad"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
-                    <label for="idProyecto"> Id Proyecto</label>
+                        placeholder="Introduzca la prioridad del incidente" [(ngModel)]="prioridad">
+                    <label for="idProyecto">Id Proyecto</label>
                     <input name="idProyecto" type="number" class="form-control" id="idProyecto"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idProyecto">
+                        placeholder="Introduzca el ID del proyecto" [(ngModel)]="idProyecto">
                 </div>
 
-                <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
             </form>
         </div>
     </div>

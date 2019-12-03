@@ -10,16 +10,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h3>Editar Bono</h3>
+                        <h3>Modificar Modelo de Entrega</h3>
                         <form>
                             <div class="form-group">
-                                <label for="tipo"> Tipo</label>
+                                <label for="tipo">Modelo de Entrega</label>
                                 <input name="tipo" type="text" class="form-control" id="tipo"
-                                    placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+                                   [(ngModel)]="tipo">
                             </div>
 
-                            <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-                            <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                            <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                            <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
                         </form>
                     </div>
                 </div>

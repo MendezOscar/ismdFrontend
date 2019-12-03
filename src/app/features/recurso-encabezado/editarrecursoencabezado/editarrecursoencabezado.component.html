@@ -1,21 +1,34 @@
 <app-navgeacion></app-navgeacion>
-<h3>Editar Bono</h3>
-<form>
-    <div class="form-group">
-        <label for="nombre"> Nombre</label>
-        <input name="nombre" type="text" class="form-control" id="nombre"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
-        <label for="descripcion"> Descripcion</label>
-        <input name="descripcion" type="text" class="form-control" id="descripcion"
-                placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
-        <label for="tipo"> Tipo</label>
-        <input name="tipo" type="text" class="form-control" id="tipo"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
-        <label for="costo"> Costo</label>
-        <input name="costo" type="number" class="form-control" id="costo"
-                placeholder="Introduzca el nombre del bono" [(ngModel)]="costo">
-    </div>
 
-    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+
+  <div class="row">
+
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+            <h3>Modificar Recurso</h3>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input name="nombre" type="text" class="form-control" id="nombre"
+                        placeholder="Introduzca el nombre del recurso" [(ngModel)]="nombre">
+                    <label for="descripcion"> Descripcion</label>
+                    <input name="descripcion" type="text" class="form-control" id="descripcion"
+                            placeholder="Introduzca la descripción del recurso" [(ngModel)]="descripcion">
+                    <label for="tipo">Tipo</label>
+                    <input name="tipo" type="text" class="form-control" id="tipo"
+                        placeholder="Introduzca el tipo de recurso" [(ngModel)]="tipo">
+                    <label for="costo">Costo</label>
+                    <input name="costo" type="number" class="form-control" id="costo"
+                            placeholder="Introduzca el costo del recurso" [(ngModel)]="costo">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
+            </form>
+	</div>
+
+   </div>
+</div>

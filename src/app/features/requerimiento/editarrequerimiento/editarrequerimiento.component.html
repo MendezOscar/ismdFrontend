@@ -23,34 +23,34 @@
         </div>
         <div class="col-8">
 
-            <h3>Editar Requerimiento</h3>
+            <h3>Modificar Requerimiento</h3>
             <form>
                 <div class="form-group">
-                    <label for="nombre"> Nombre</label>
+                    <label for="nombre">Nombre</label>
                     <input name="nombre" type="text" class="form-control" id="nombre"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">
+                        placeholder="Introduzca el nombre del requerimiento" [(ngModel)]="nombre">
                     <label for="descripcion"> Descripcion</label>
                     <input name="descripcion" type="text" class="form-control" id="descripcion"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="descripcion">
-                    <label for="fecha"> Fecha</label>
+                        placeholder="Introduzca descripción del requerimiento" [(ngModel)]="descripcion">
+                    <label for="fecha">Fecha</label>
                     <input name="fecha" type="date" class="form-control" id="fecha"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="fecha">
-                    <label for="prioridad"> Prioridad</label>
+                        placeholder="Introduzca la fecha del requerimiento" [(ngModel)]="fecha">
+                    <label for="prioridad">Prioridad</label>
                     <input name="prioridad" type="text" class="form-control" id="prioridad"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="prioridad">
-                    <label for="estado"> Estado</label>
+                        placeholder="Introduzca la prioridad del requerimiento" [(ngModel)]="prioridad">
+                    <label for="estado">Estado</label>
                     <input name="estado" type="text" class="form-control" id="estado"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="estado">
+                        placeholder="Introduzca el estado del requerimiento" [(ngModel)]="estado">
                     <label for="programador"> Programador</label>
                     <input name="programador" type="text" class="form-control" id="programador"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="programador">
+                        placeholder="Introduzca el nombre del programador" [(ngModel)]="programador">
                     <label for="idProyecto"> Id Proyecto</label>
                     <input name="idProyecto" type="number" class="form-control" id="idProyecto"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idProyecto">
+                        placeholder="Introduzca el ID del proyecto" [(ngModel)]="idProyecto">
                 </div>
 
-                <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
             </form>
         </div>
     </div>

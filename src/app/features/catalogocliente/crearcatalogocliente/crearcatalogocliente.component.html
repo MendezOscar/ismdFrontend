@@ -23,25 +23,25 @@
         </div>
         <div class="col-8">
 
-            <h3>Create Catalogo Cliente</h3>
+            <h3>Crear Catalogo Cliente</h3>
             <form>
                 <div class="form-group">
                     <label for="categoryName"> Id Catalogo Tecnico</label>
                     <input name="categoryName" type="number" class="form-control" id="categoryName"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idCatalogoTecnico">
-                    <label for="categoryName"> Componente</label>
+                        placeholder="Introduzca el ID del catalogo técnico" [(ngModel)]="idCatalogoTecnico">
+                    <label for="categoryName">Componente</label>
                     <input name="categoryName" type="text" class="form-control" id="categoryName"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="componente">
+                        placeholder="Introduzca el nombre del componente" [(ngModel)]="componente">
                     <label for="categoryName"> Funcionalidad</label>
                     <input name="categoryName" type="text" class="form-control" id="categoryName"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="funcionalidad">
+                        placeholder="Introduzca la funcionalidad" [(ngModel)]="funcionalidad">
                     <label for="categoryName"> Ayuda</label>
                     <input name="categoryName" type="text" class="form-control" id="categoryName"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="ayuda">
+                        placeholder="Introduzca una ayuda" [(ngModel)]="ayuda">
                 </div>
 
-                <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
-                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="crear()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
             </form>
         </div>
     </div>

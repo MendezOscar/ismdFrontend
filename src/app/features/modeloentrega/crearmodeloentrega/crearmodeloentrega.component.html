@@ -11,17 +11,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h5>Crear Bono</h5>
+                        <h5>Crear nuevo modelo de entrega</h5>
                         <br />
                         <form>
                             <div class="form-group">
-                                <label for="categoryName"> Tipo</label>
+                                <label for="categoryName">Modelo de Entrega</label>
                                 <input name="categoryName" type="text" class="form-control" id="categoryName"
-                                    placeholder="Introduzca el nombre del bono" [(ngModel)]="tipo">
+                                    placeholder="Introduzca el nombre del modelo de entrega" [(ngModel)]="tipo">
                             </div>
                             <br />
-                            <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
-                            <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                            <button type="submit" class="btn btn-primary" (click)="crear()">Guardar</button>
+                            <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
                         </form>
                     </div>
                 </div>

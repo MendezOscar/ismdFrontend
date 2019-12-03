@@ -1,12 +1,27 @@
 <app-navgeacion></app-navgeacion>
-<h3>Crear Gestión de Riesgos</h3>
-<form>
-    <div class="form-group">
-        <label for="categoryName">Id Riesgo</label>
-        <input name="categoryName" type="text" class="form-control" id="categoryName"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="idRiego">
-    </div>
 
-    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+
+  <div class="row">
+
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+            <h3>Crear cambio de Riesgos</h3>
+            <form>
+                <div class="form-group">
+                    <label for="categoryName">Id Riesgo</label>
+                    <input name="categoryName" type="text" class="form-control" id="categoryName"
+                        placeholder="Introduzca el nuevo ID" [(ngModel)]="idRiego">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="crear()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
+            </form>
+
+	</div>
+
+   </div>
+</div>
+

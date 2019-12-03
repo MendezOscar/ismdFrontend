@@ -1,12 +1,27 @@
 <app-navgeacion></app-navgeacion>
-<h3>Editar Riesgo</h3>
-<form>
-    <div class="form-group">
-        <label for="idRiego">Id Riesgo</label>
-        <input name="idRiego" type="text" class="form-control" id="idRiego"
-            placeholder="Introduzca el ID del riesgo" [(ngModel)]="idRiego">
-    </div>
 
-    <button type="submit" class="btn btn-primary" (click)="editar()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+
+  <div class="row">
+
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+            <h3>Modifiar cambio de Riesgos</h3>
+            <form>
+                <div class="form-group">
+                    <label for="idRiego">Id Riesgo</label>
+                    <input name="idRiego" type="text" class="form-control" id="idRiego"
+                        placeholder="Introduzca el nuevo ID del riesgo" [(ngModel)]="idRiego">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="editar()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
+            </form>
+	</div>
+
+   </div>
+</div>
+
+

@@ -23,21 +23,21 @@
         </div>
         <div class="col-8">
 
-            <h3>Create Bono</h3>
+            <h3>Gestión de Cambios</h3>
             <form>
                 <div class="form-group">
                     <label for="categoryName">Solicitante</label>
                     <input name="categoryName" type="text" class="form-control" id="categoryName"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="solicitante">
+                        placeholder="Introduzca el nombre del solicitante" [(ngModel)]="solicitante">
                 </div>
                 <div class="form-group">
                     <label for="categoryName">Razón</label>
                     <input name="categoryName" type="text" class="form-control" id="categoryName"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="razon">
+                        placeholder="Introduzca la razón del cambio" [(ngModel)]="razon">
                 </div>
 
-                <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
-                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="crear()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
             </form>
         </div>
     </div>

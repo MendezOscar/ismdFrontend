@@ -1,22 +1,36 @@
 <app-navgeacion></app-navgeacion>
-<h3>Crear Riesgo</h3>
-<form>
-    <div class="form-group">
-        <label for="categoryName"> Nombre</label>
-        <input name="categoryName" type="text" class="form-control" id="categoryName"
-            placeholder="Introduzca el nombre del riesgo" [(ngModel)]="nombre">
-    </div>
-    <div class="form-group">
-        <label for="categoryName"> Descripción</label>
-        <input name="categoryName" type="text" class="form-control" id="categoryName"
-            placeholder="Introduzca la descripción del riesgo" [(ngModel)]="descripcion">
-    </div>
-    <div class="form-group">
-        <label for="categoryName"> Tipo</label>
-        <input name="categoryName" type="text" class="form-control" id="categoryName"
-            placeholder="Introduzca el tipo de riesgo" [(ngModel)]="tipo">
-    </div>
 
-    <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>
-    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
-</form>
+<div class="container-fluid">
+
+  <div class="row">
+
+        <div class="col-3">
+		<app-dashboard></app-dashboard>
+	</div>
+	 <div class="col-8">
+            <h3>Crear Riesgo</h3>
+            <form>
+                <div class="form-group">
+                    <label for="categoryName">Nombre</label>
+                    <input name="categoryName" type="text" class="form-control" id="categoryName"
+                        placeholder="Introduzca el nombre del riesgo" [(ngModel)]="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="categoryName">Descripción</label>
+                    <input name="categoryName" type="text" class="form-control" id="categoryName"
+                        placeholder="Introduzca la descripción del riesgo" [(ngModel)]="descripcion">
+                </div>
+                <div class="form-group">
+                    <label for="categoryName">Tipo</label>
+                    <input name="categoryName" type="text" class="form-control" id="categoryName"
+                        placeholder="Introduzca el tipo de riesgo" [(ngModel)]="tipo">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="crear()">Guardar</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancelar</button>
+            </form>
+            
+	</div>
+
+   </div>
+</div>
