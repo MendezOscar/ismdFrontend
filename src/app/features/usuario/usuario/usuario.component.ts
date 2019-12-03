@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/models/Usuario';
+import { Usaurio } from 'src/app/models/Usaurio';
+
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-  usuario: Usuario[];
+  usuario: Usaurio[];
 
     constructor(private usuarioService: UsuarioService, private router: Router) { }
   
