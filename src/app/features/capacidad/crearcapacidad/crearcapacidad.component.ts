@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CapacidadService } from 'src/app/services/capacidad/capacidad.service';
 import { Router } from '@angular/router';
 import { Capacidad } from 'src/app/models/Capacidad';
+import { Proyecto } from 'src/app/models/Proyecto';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
 @Component({
   selector: 'app-crearcapacidad',
   templateUrl: './crearcapacidad.component.html',
@@ -9,7 +11,8 @@ import { Capacidad } from 'src/app/models/Capacidad';
 })
 export class CrearcapacidadComponent implements OnInit {
   capacidad: Capacidad;
-  idProyecto: number;
+  idProyecto: string;
+  proyectos: Proyecto[];
   estado: string;
   monto: number;
 
@@ -18,15 +21,24 @@ export class CrearcapacidadComponent implements OnInit {
   dev: boolean;
   client: boolean;
 
-  constructor(private capacidadService: CapacidadService, private router: Router) { }
+  constructor(private capacidadService: CapacidadService,private proyectoService: ProyectoService, private router: Router) { }
 
   ngOnInit() {
     this.getNavBar();
+    this.getProyectos();
+  }
+
+  getProyectos() {
+    this.proyectoService.getProyecto().subscribe(data => {
+      this.proyectos = data;
+    });
   }
 
   crear() {
     this.capacidad = new Capacidad();
-    this.capacidad.idProyecto = this.idProyecto;
+  //  this.capacidad.idProyecto = this.idProyecto;
+      // tslint:disable-next-line: radix
+      this.capacidad.idProyecto = parseInt(this.idProyecto);
     this.capacidad.estado = this.estado;
     this.capacidad.monto = this.monto;
 

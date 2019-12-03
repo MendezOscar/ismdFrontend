@@ -2,9 +2,17 @@
 <h3>Editar Recurso detalle</h3>
 <form>
     <div class="form-group">
-        <label for="idRecurso"> idrecurso</label>
+        <!--        <label for="idRecurso"> idrecurso</label>
         <input name="idRecurso" type="text" class="form-control" id="idRecurso"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="idRecurso">
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="idRecurso">-->
+
+
+            <label for="cursoControlSelect">Seleccione el nombre del curso</label>
+            <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idRecurso">
+                <option *ngFor="let item of recurso" [value]="item.idRecurso">
+                    {{  item.nombre   }}</option>
+            </select>
+
         <label for="capacidad"> Capacidad</label>
         <input name="capacidad" type="text" class="form-control" id="capacidad"
                 placeholder="Introduzca el nombre del bono" [(ngModel)]="capacidad">

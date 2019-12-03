@@ -12,16 +12,23 @@
 <h3>Editar Capacidad</h3>
 <form>
     <div class="form-group">
-        <label for="nombre"> Id proyecto</label>
+     <!-- <label for="nombre"> Id proyecto</label>
         <input name="nombre" type="text" class="form-control" id="nombre"
-            placeholder="Introduzca el nombre del proveedor" [(ngModel)]="idProyecto">
+            placeholder="Introduzca el nombre del proveedor" [(ngModel)]="idProyecto">-->  
+            <label for="cursoControlSelect">Seleccione el nombre del curso</label>
+            <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idProyecto">
+                <option *ngFor="let item of proyectos" [value]="item.idProyecto">
+                    {{
+                                item.nombre
+                              }}</option>
+            </select>
 
         <label for="tipo"> Estado</label>
         <input name="tipo" type="text" class="form-control" id="tipo"
             placeholder="Introduzca el nombre del bono" [(ngModel)]="estado">
 
-        <label for="funcionalidad"> Monto</label>
-        <input name="funcionalidad" type="text" class="form-control" id="funcionalidad"
+        <label for="monto"> Monto</label>
+        <input name="monto" type="number" class="form-control" id="monto"
             placeholder="Introduzca el nombre del bono" [(ngModel)]="monto">
             
     </div>

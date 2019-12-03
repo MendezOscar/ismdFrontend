@@ -3,6 +3,7 @@ import { CapacidadService } from 'src/app/services/capacidad/capacidad.service';
 import { Router } from '@angular/router';
 import { Capacidad } from 'src/app/models/Capacidad';
 
+
 @Component({
   selector: 'app-capacidad',
   templateUrl: './capacidad.component.html',

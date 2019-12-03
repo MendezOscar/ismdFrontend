@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CapacidadService } from 'src/app/services/capacidad/capacidad.service';
 import { Capacidad } from 'src/app/models/Capacidad';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
+import { Proyecto } from 'src/app/models/Proyecto';
+
 
 @Component({
   selector: 'app-editarcapacidad',
@@ -10,7 +13,8 @@ import { Capacidad } from 'src/app/models/Capacidad';
 })
 export class EditarcapacidadComponent implements OnInit {
   capacidad: Capacidad;
-  idProyecto: number;
+  idProyecto: string;
+  proyectos: Proyecto[];
   estado: string;
   monto: number;
 
@@ -19,7 +23,8 @@ export class EditarcapacidadComponent implements OnInit {
   dev: boolean;
   client: boolean;
 
-  constructor(private capacidadService: CapacidadService, private router: Router, private route: ActivatedRoute) {
+  constructor(private capacidadService: CapacidadService,
+    private proyectoService: ProyectoService, private router: Router, private route: ActivatedRoute) {
     this.capacidad = new Capacidad();
   }
 
@@ -28,19 +33,28 @@ export class EditarcapacidadComponent implements OnInit {
     // tslint:disable-next-line: radix
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getCapacidadById(id);
+    this.getProyectos();
   }
 
   getCapacidadById(id: number) {
     this.capacidadService.getCapacidadById(id).subscribe(data => {
       this.capacidad = data;
-      this.idProyecto = this.capacidad.idProyecto;
+     // this.idProyecto = this.capacidad.idProyecto;
       this.estado = this.capacidad.estado;
       this.monto = this.capacidad.monto;
     });
   }
 
+  getProyectos() {
+    this.proyectoService.getProyecto().subscribe(data => {
+      this.proyectos = data;
+    });
+  }
+
   editar() {
-    this.capacidad.idProyecto = this.idProyecto;
+  //  this.capacidad.idProyecto = this.idProyecto;
+      // tslint:disable-next-line: radix
+      this.capacidad.idProyecto = parseInt(this.idProyecto);
     this.capacidad.estado = this.estado;
     this.capacidad.monto = this.monto;
 
