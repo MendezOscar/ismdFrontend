@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RequerimientoService } from 'src/app/services/requerimiento/requerimiento.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Requerimiento } from 'src/app/models/Requerimiento';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
+import { Proyecto } from 'src/app/models/Proyecto';
 
 @Component({
   selector: 'app-editarrequerimiento',
@@ -16,14 +18,15 @@ export class EditarrequerimientoComponent implements OnInit {
   prioridad: string;
   estado: string;
   programador: string;
-  idProyecto: number;
+  idProyecto: string;
+  proyectos: Proyecto[];
 
   userType: string;
   admin: boolean;
   dev: boolean;
   client: boolean;
 
-  constructor(private requeriemitoService: RequerimientoService, private router: Router,
+  constructor(private requeriemitoService: RequerimientoService, private router: Router, private proyectoService: ProyectoService,
     private route: ActivatedRoute) {
     this.requerimiento = new Requerimiento();
   }
@@ -33,6 +36,7 @@ export class EditarrequerimientoComponent implements OnInit {
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getRequerimientoById(id);
     this.getNavBar();
+    this.getProyectos();
   }
 
   getNavBar() {
@@ -55,9 +59,16 @@ export class EditarrequerimientoComponent implements OnInit {
       this.prioridad = this.requerimiento.prioridad;
       this.estado = this.requerimiento.estado;
       this.programador = this.requerimiento.programador;
-      this.idProyecto = this.requerimiento.idProyecto;
+     // this.idProyecto = this.requerimiento.idProyecto;
     });
   }
+
+  getProyectos() {
+    this.proyectoService.getProyecto().subscribe(data => {
+      this.proyectos = data;
+    });
+  }
+
 
   editar() {
     this.requerimiento.nombre = this.nombre;
@@ -65,9 +76,9 @@ export class EditarrequerimientoComponent implements OnInit {
     this.requerimiento.fecha = this.fecha;
     this.requerimiento.prioridad = this.prioridad;
     this.requerimiento.estado = this.estado;
-    this.requerimiento.programador = this.programador;
-    this.requerimiento.idProyecto = this.idProyecto;
-
+    this.requerimiento.programador = this.programador;   
+     // tslint:disable-next-line: radix
+    this.requerimiento.idProyecto = parseInt(this.idProyecto);
     this.requeriemitoService.editRequerimiento(this.requerimiento).subscribe(() => {
       this.router.navigate(['requerimiento']);
     });

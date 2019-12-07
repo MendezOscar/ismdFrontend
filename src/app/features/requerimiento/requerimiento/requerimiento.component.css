@@ -1,0 +1,5 @@
+.nuevo { background-color: rgb(0, 195, 255); }
+.enespera { background-color: rgb(255, 187, 0);}
+.enproceso { background-color: rgb(0, 255, 128); }
+.terminado { background-color: green; }
+.cancelado { background-color: red; }

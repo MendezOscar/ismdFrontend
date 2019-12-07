@@ -2,9 +2,14 @@
 <h3>Crear Gestión de Riesgos</h3>
 <form>
     <div class="form-group">
-        <label for="categoryName">Id Riesgo</label>
+    <label for="categoryName">Id Riesgo</label>
         <input name="categoryName" type="text" class="form-control" id="categoryName"
-            placeholder="Introduzca el nombre del bono" [(ngModel)]="idRiego">
+            placeholder="Introduzca el nombre del bono" [(ngModel)]="idRiego"> 
+        <!--<label for="cursoControlSelect">Seleccione el nombre del Riesgo</label>
+            <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idRiego">
+                <option *ngFor="let item of riesgo" [value]="item.idRiesgo">
+                    {{  item.nombre   }}</option>
+            </select>-->    
     </div>
 
     <button type="submit" class="btn btn-primary" (click)="crear()">Save</button>

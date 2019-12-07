@@ -43,13 +43,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of requerimiento">
+          <tr *ngFor="let item of requerimiento" >
             <th scope="row">{{item.idRequerimiento}}</th>
             <td>{{item.nombre}}</td>
             <td>{{item.descripcion}}</td>
             <td>{{item.fecha}}</td>
             <td>{{item.prioridad}}</td>
-            <td>{{item.estado}}</td>
+            <td *ngIf="item.estado=='Nuevo'" then class="nuevo">{{item.estado}}</td>
+            <td *ngIf="item.estado=='En espera'" then class="enespera">{{item.estado}}</td>
+            <td *ngIf="item.estado=='En proceso'" then class="enproceso">{{item.estado}}</td>
+            <td *ngIf="item.estado=='Terminado'" then class="terminado">{{item.estado}}</td>
+            <td *ngIf="item.estado=='Cancelado'" then class="cancelado">{{item.estado}}</td>
             <td>{{item.programador}}</td>
             <td>{{item.idProyecto}}</td>
             <td>

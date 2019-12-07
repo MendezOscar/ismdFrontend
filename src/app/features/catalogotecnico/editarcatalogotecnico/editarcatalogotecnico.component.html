@@ -26,9 +26,17 @@
             <h3>Editar Catalogo Tecnico</h3>
             <form>
                 <div class="form-group">
-                    <label for="idRequerimiento"> ID Requerimiento</label>
+             <!--<label for="idRequerimiento"> ID Requerimiento</label>
                     <input name="idRequerimiento" type="number" class="form-control" id="idRequerimiento"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idRequerimiento">
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idRequerimiento">-->    
+                        
+                        <label for="categoryName"> Id Requerimiento</label>
+                        <label for="cursoControlSelect">Seleccione el nombre del Proyecto</label>
+                        <select name="idrequerimiento" class="form-control" id="idrequerimiento"  [(ngModel)]="idrequerimiento">
+                            <option *ngFor="let item of requerimiento" [value]="item.idRequerimiento">
+                                {{  item.nombre   }}</option>
+                        </select>   
+
                     <label for="nombre"> Nombre</label>
                     <input name="nombre" type="text" class="form-control" id="nombre"
                         placeholder="Introduzca el nombre del bono" [(ngModel)]="nombre">

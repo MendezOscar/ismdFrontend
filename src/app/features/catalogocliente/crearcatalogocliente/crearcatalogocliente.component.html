@@ -26,9 +26,15 @@
             <h3>Create Catalogo Cliente</h3>
             <form>
                 <div class="form-group">
-                    <label for="categoryName"> Id Catalogo Tecnico</label>
+                <label for="categoryName"> Id Catalogo Tecnico</label>
                     <input name="categoryName" type="number" class="form-control" id="categoryName"
-                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idCatalogoTecnico">
+                        placeholder="Introduzca el nombre del bono" [(ngModel)]="idCatalogoTecnico"> 
+                    <!-- <label for="categoryName"> Id Catalogo Tecnico</label>
+                        <label for="cursoControlSelect">Seleccione el nombre del Proyecto</label>
+                        <select name="nombreCurso" class="form-control" id="cursoControlSelect"  [(ngModel)]="idCatalogoTecnico">
+                            <option *ngFor="let item of catalogoTecnico" [value]="item.idCatalogoTec">
+                                {{  item.nombre   }}</option>
+                        </select>      -->   
                     <label for="categoryName"> Componente</label>
                     <input name="categoryName" type="text" class="form-control" id="categoryName"
                         placeholder="Introduzca el nombre del bono" [(ngModel)]="componente">

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RequerimientoService } from 'src/app/services/requerimiento/requerimiento.service';
 import { Router } from '@angular/router';
 import { Requerimiento } from 'src/app/models/Requerimiento';
+import { Proyecto } from 'src/app/models/Proyecto';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
 @Component({
   selector: 'app-crearrequerimiento',
   templateUrl: './crearrequerimiento.component.html',
@@ -15,17 +17,19 @@ export class CrearrequerimientoComponent implements OnInit {
   prioridad: string;
   estado: string;
   programador: string;
-  idProyecto: number;
+  idProyecto: string;
+  proyectos: Proyecto[];
 
   userType: string;
   admin: boolean;
   dev: boolean;
   client: boolean;
 
-  constructor(private requerimientoService: RequerimientoService, private router: Router) { }
+  constructor(private requerimientoService: RequerimientoService,private proyectoService: ProyectoService, private router: Router) { }
 
   ngOnInit() {
     this.getNavBar();
+    this.getProyectos();
   }
 
   getNavBar() {
@@ -39,6 +43,11 @@ export class CrearrequerimientoComponent implements OnInit {
     }
   }
 
+  getProyectos() {
+    this.proyectoService.getProyecto().subscribe(data => {
+      this.proyectos = data;
+    });
+  }
 
   crear() {
     this.requerimiento = new Requerimiento();
@@ -47,8 +56,9 @@ export class CrearrequerimientoComponent implements OnInit {
     this.requerimiento.fecha = this.fecha;
     this.requerimiento.prioridad = this.prioridad;
     this.requerimiento.estado = this.estado;
-    this.requerimiento.programador = this.programador;
-    this.requerimiento.idProyecto = this.idProyecto;
+    this.requerimiento.programador = this.programador; 
+       // tslint:disable-next-line: radix
+    this.requerimiento.idProyecto = parseInt(this.idProyecto);
 
     this.requerimientoService.createRequerimiento(this.requerimiento).subscribe(() => {
       this.router.navigate(['requerimiento']);

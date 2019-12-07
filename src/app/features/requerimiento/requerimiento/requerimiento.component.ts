@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RequerimientoService } from 'src/app/services/requerimiento/requerimiento.service';
 import { Router } from '@angular/router';
 import { Requerimiento } from 'src/app/models/Requerimiento';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-requerimiento',
   templateUrl: './requerimiento.component.html',
@@ -31,6 +32,7 @@ export class RequerimientoComponent implements OnInit {
       this.client = true;
     }
   }
+
 
   getRequerimiento() {
     this.requerimientoService.getRequerimiento().subscribe(data => {
